@@ -27,10 +27,6 @@
   letter-spacing: -0.01em;
   white-space: pre;
 }
-.title span {
-  font-size: 0.6em;
-  vertical-align: 0.15em;
-}
 .component {
   justify-content: flex-start;
   gap: 8px;

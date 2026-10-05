@@ -47,6 +47,7 @@
   --shadow-device: 0 16px 36px rgb(20 20 20 / 0.14);
   --shadow-float: 0 8px 24px rgb(20 20 26 / 0.1);
   --shadow-lift: 0 10px 24px rgb(140 123 247 / 0.35);
+  --shadow-badge: 0 4px 10px rgb(0 0 0 / 0.12);
 
   /* — type families — */
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;

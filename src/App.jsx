@@ -1,6 +1,7 @@
 import NavToolbar from './components/NavToolbar'
 import Hero from './sections/Hero'
 import SkillsTicker from './sections/SkillsTicker'
+import Work from './sections/Work'
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Hero />
       <main>
         <SkillsTicker />
+        <Work />
       </main>
     </>
   )

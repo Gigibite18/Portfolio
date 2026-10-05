@@ -1,0 +1,96 @@
+.cover {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 660 / 480;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--dd-kraft);
+}
+.stage {
+  position: absolute;
+  inset: 0;
+}
+
+.back {
+  z-index: 0;
+}
+.front {
+  z-index: 1;
+}
+.ipad {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 3.94cqw;
+  background: var(--ink);
+  box-shadow: var(--shadow-device);
+  transition: transform 500ms var(--ease-spring);
+}
+.screen {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 2.4cqw;
+  background: var(--canvas);
+}
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doodle {
+  position: absolute;
+  overflow: hidden;
+}
+.doodle img {
+  position: absolute;
+  max-width: none;
+}
+
+.cursor {
+  position: absolute;
+  left: 56.36cqw;
+  top: 56.36cqw;
+  font-size: 1rem;
+}
+
+.lia {
+  position: absolute;
+  transform: scaleX(-1);
+  transform-origin: center;
+  transition: transform 500ms var(--ease-spring);
+}
+.liaOutline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+}
+.liaArt {
+  position: absolute;
+  overflow: hidden;
+}
+.liaArt img {
+  position: absolute;
+  max-width: none;
+}
+
+/* hover on the featured card: devices drift apart, doodles twinkle, Lia hops */
+:global([data-frame-host]:hover) .back {
+  transform: translate(1.5cqw, -1.2cqw) rotate(-2deg);
+}
+:global([data-frame-host]:hover) .front {
+  transform: translate(-1cqw, 1cqw) rotate(-1deg);
+}
+:global([data-frame-host]:hover) .lia {
+  transform: scaleX(-1) translateY(-2cqw) rotate(-3deg);
+}
+:global([data-frame-host]:hover) .doodle {
+  animation: twinkle 1.4s ease-in-out var(--d) infinite;
+}
+@keyframes twinkle {
+  50% {
+    transform: scale(1.35) rotate(12deg);
+  }
+}
