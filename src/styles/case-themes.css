@@ -105,3 +105,28 @@
   --t-font-hand: var(--font-hand);
   --t-font-display: var(--font-sans);
 }
+
+[data-case='lumina'] {
+  --t-bg: #f5f7fd;
+  --t-ink: #2d2640;
+  --t-ink-soft: #6b5f8c;
+  --t-accent: #6b5f8c;
+  --t-dark: #2d2640;
+  --t-on-dark: #f5f7fd;
+  --t-c1: #aecbeb;
+  --t-c2: #c3d5fc;
+  --t-c3: #d9d2f0;
+  --t-c4: #e6eefb;
+  --t-c5: #74a7eb;
+  --t-band-1: #eaf0fc;
+  --t-band-2: #f0edf8;
+  --t-band-3: #e9f3fb;
+  --t-paper: #ffffff;
+  --t-cover: #6b5f8c;
+  --t-line: #74a7eb;
+  --t-kraft: #eaf0fc;
+  --t-shadow: rgb(45 38 64 / 0.12);
+  --t-shadow-deep: rgb(45 38 64 / 0.25);
+  --t-font-hand: var(--font-hand);
+  --t-font-display: var(--font-sans);
+}
