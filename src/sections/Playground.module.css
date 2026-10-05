@@ -1,0 +1,221 @@
+.playground {
+  padding: 40px var(--gutter) var(--section-y);
+  scroll-margin-top: 0;
+}
+
+.board {
+  container-type: inline-size;
+  position: relative;
+  max-width: var(--page-max);
+  aspect-ratio: 1200 / 680;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 32px;
+  background-color: var(--purple-soft);
+  background-image: url('/art/playground-dots.png');
+  background-size: 50px 50px;
+  touch-action: pan-y;
+}
+.board[data-tool='pencil'] {
+  cursor: crosshair;
+  touch-action: none;
+}
+.board[data-tool='stamp'] {
+  cursor: copy;
+}
+
+.intro {
+  position: absolute;
+  left: 4.67%;
+  top: 7.65%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 44%;
+  pointer-events: none;
+}
+.title {
+  margin-top: 8px;
+  font-size: min(var(--fs-display-l), 6cqw);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+.scribble {
+  width: 33.3cqw;
+  height: auto;
+  margin-top: -10px;
+}
+.desc {
+  max-width: 440px;
+  margin-top: 12px;
+  font-size: var(--fs-body-l);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--ink-muted);
+}
+
+/* ——— hand-made slots ——— */
+.slotItem {
+  position: absolute;
+  width: var(--a);
+  translate: -50% -50%;
+}
+.slot {
+  width: 100%;
+  background: transparent;
+  backdrop-filter: none;
+}
+.slot span {
+  font-size: max(22px, 3.33cqw);
+}
+.slot figcaption {
+  font-size: max(15px, 2.17cqw);
+}
+.slotItem:hover .slot {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* ——— drawing / stamps / stickers ——— */
+.ink {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.ink polyline {
+  fill: none;
+  stroke: var(--purple);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.stamp {
+  position: absolute;
+  animation: stampIn 360ms var(--ease-spring) both;
+  pointer-events: none;
+}
+@keyframes stampIn {
+  from {
+    opacity: 0;
+    transform: scale(1.8) rotate(var(--r));
+  }
+}
+.stickers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.sticker {
+  position: absolute;
+  pointer-events: none;
+  transition:
+    left 600ms var(--ease-spring),
+    top 600ms var(--ease-spring),
+    transform 260ms var(--ease-spring);
+}
+.stickers[data-draggable] .sticker {
+  pointer-events: auto;
+}
+
+.cursor {
+  position: absolute;
+  left: 77.5%;
+  top: 48.5%;
+}
+
+/* ——— toolbar ——— */
+.toolbar {
+  position: absolute;
+  left: 50%;
+  bottom: 4.6%;
+  z-index: 5;
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-float);
+  translate: -50% 0;
+}
+.tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 40px;
+  min-height: 36px;
+  padding: 8px 12px 9px;
+  border-radius: 10px;
+  font-size: var(--fs-label-m);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+  transition: background-color var(--dur-fast);
+}
+.tool:hover {
+  background: var(--canvas);
+}
+.tool[aria-pressed='true'] {
+  background: var(--blue);
+  color: var(--surface);
+}
+
+/* ——— tablet & phone: let the board grow, slots flow in a grid ——— */
+@media (max-width: 900px) {
+  .board {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 36px 24px 96px;
+  }
+  .intro {
+    position: relative;
+    inset: auto;
+    width: auto;
+  }
+  .title {
+    font-size: var(--fs-display-l);
+    white-space: normal;
+  }
+  .scribble {
+    width: min(300px, 70%);
+  }
+  .slots {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .slotItem {
+    position: static;
+    width: auto;
+    translate: none;
+  }
+  .slotItem:first-child {
+    grid-column: span 2;
+    justify-self: center;
+    width: min(100%, 300px);
+  }
+  .slot figcaption {
+    font-size: 1.125rem;
+  }
+  .slot span {
+    font-size: 1.75rem;
+  }
+  .cursor {
+    display: none;
+  }
+  .toolbar {
+    bottom: 20px;
+    max-width: calc(100% - 24px);
+    overflow-x: auto;
+  }
+  .tool {
+    min-height: 44px;
+  }
+}

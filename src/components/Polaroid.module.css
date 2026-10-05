@@ -27,6 +27,11 @@
   height: 100%;
   object-fit: cover;
 }
+.photo img.crop {
+  position: absolute;
+  max-width: none;
+  object-fit: fill;
+}
 .caption {
   font-family: var(--font-hand);
   line-height: 1.1;
@@ -43,9 +48,11 @@
 }
 
 .s {
+  justify-content: center;
   gap: 9px;
   width: 135px;
-  min-height: 168px;
+  height: 168px;
+  overflow: hidden;
 }
 .s .photo {
   width: 101px;
@@ -53,5 +60,5 @@
 }
 .s .caption {
   font-size: 1rem;
-  max-width: 100px;
+  max-width: var(--cap, 100px);
 }

@@ -1,0 +1,133 @@
+.awards {
+  padding: 0 var(--gutter) var(--section-y);
+}
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 44px 48px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+}
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.title {
+  font-size: var(--fs-heading-m);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.note {
+  font-family: var(--font-hand);
+  font-size: var(--fs-hand-m);
+  line-height: 1.1;
+  color: var(--purple);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px;
+  border-radius: 20px;
+  transition: transform 300ms var(--ease-out);
+}
+.card[data-tone='purple'] {
+  background: var(--purple-soft);
+}
+.card[data-tone='blue'] {
+  background: var(--blue-soft);
+}
+.card:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+}
+.meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink-muted);
+}
+.name {
+  font-size: var(--fs-heading-s);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.text {
+  color: var(--ink-muted);
+}
+.link {
+  align-self: flex-start;
+  font-size: var(--fs-label-s);
+  font-weight: 500;
+  line-height: 1.2;
+  /* blue on soft tints is < 4.5:1 → ink-blue mix keeps the Figma hue at AA */
+  color: color-mix(in srgb, var(--blue) 62%, var(--ink));
+}
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.sealRight {
+  position: absolute;
+  right: -4px;
+  top: -24px;
+  pointer-events: none;
+}
+.sealLeft {
+  position: absolute;
+  left: 324px;
+  top: 181px;
+  pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+  .board {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 36px 28px;
+  }
+  .sealLeft {
+    left: auto;
+    right: 28px;
+    top: 24px;
+  }
+}
+@media (max-width: 680px) {
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .board {
+    padding: 28px 20px;
+  }
+  .sealLeft {
+    transform: scale(0.8) rotate(8deg);
+    right: 8px;
+    top: 8px;
+  }
+  .sealRight {
+    display: none;
+  }
+}

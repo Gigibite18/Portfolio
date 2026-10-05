@@ -5,7 +5,7 @@ export default function Polaroid({ src, alt, caption, frame = 'pink', rotate = 0
   return (
     <figure className={`${styles.polaroid} ${styles[size]} ${className}`} style={{ '--r': `${rotate}deg`, ...style }}>
       <div className={styles.photo} data-frame={frame}>
-        <img src={src} alt={alt} loading="lazy" style={crop} />
+        <img src={src} alt={alt} loading="lazy" style={crop} className={crop ? styles.crop : undefined} />
       </div>
       <figcaption className={styles.caption}>{caption}</figcaption>
     </figure>

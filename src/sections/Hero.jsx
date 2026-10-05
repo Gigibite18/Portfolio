@@ -50,7 +50,7 @@ export default function Hero() {
   }, [illustration])
 
   return (
-    <header className={styles.hero} ref={heroRef} data-illustration={illustration || undefined}>
+    <header id="top" className={styles.hero} ref={heroRef} data-illustration={illustration || undefined}>
       <a className="skip-link" href="#work">
         Skip to work
       </a>
@@ -65,7 +65,7 @@ export default function Hero() {
         </Tag>
       </div>
 
-      <div className={styles.grid} id="top">
+      <div className={styles.grid}>
         <div className={styles.intro}>
           <FrameLabel name="Product Designer, 3 yrs of experience" className={styles.frameLabel} as="p" />
 

@@ -1,0 +1,147 @@
+.panel {
+  width: 100%;
+  padding: 8px 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-panel);
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  padding: 10px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.tab {
+  font-size: var(--fs-label-m);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink-muted);
+}
+.tab[aria-selected='true'] {
+  color: var(--ink);
+}
+
+.root,
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 16px;
+  text-align: left;
+}
+.root {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  color: var(--ink-muted);
+}
+.root .name {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label-s);
+  color: var(--ink);
+}
+
+.row {
+  min-height: 34px;
+  transition: background-color var(--dur-fast);
+}
+.row:hover {
+  background: var(--canvas);
+}
+.row:focus-visible {
+  outline-offset: -2px;
+  border-radius: 0;
+}
+
+.group {
+  padding-left: 36px;
+}
+.item {
+  padding-left: 56px;
+}
+.item::before {
+  content: '';
+  width: 0;
+}
+
+.caret,
+.icon {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink-muted);
+}
+.caret {
+  display: inline-block;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.group[aria-expanded='true'] .caret {
+  transform: rotate(90deg);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.name {
+  font-size: var(--fs-label-s);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink-muted);
+}
+
+.item[aria-pressed='true'] {
+  background: var(--blue-soft);
+}
+.item[aria-pressed='true'] .name {
+  color: color-mix(in srgb, var(--blue) 70%, var(--ink));
+}
+.item[aria-pressed='true'] .icon {
+  color: var(--blue);
+}
+.item[data-pending] .name {
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.children:not([hidden]) {
+  animation: unfold 220ms var(--ease-out);
+}
+@keyframes unfold {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.assets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px;
+}
+.assets img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: var(--shadow-sticker);
+}
+.assetsNote {
+  width: 100%;
+  font-family: var(--font-hand);
+  font-size: var(--fs-hand-m);
+  color: var(--purple);
+}
