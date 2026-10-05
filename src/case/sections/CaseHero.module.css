@@ -1,0 +1,205 @@
+.hero {
+  padding: 16px;
+}
+.band {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 1168 / 708;
+  overflow: hidden;
+  border-radius: 32px;
+  background: var(--t-bg);
+}
+
+.glow {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(6cqw);
+  animation: drift 14s ease-in-out infinite alternate;
+}
+.glow[data-tone='c1'] { background: var(--t-c1); }
+.glow[data-tone='c2'] { background: var(--t-c2); animation-delay: -4s; }
+.glow[data-tone='c4'] { background: var(--t-c4); animation-delay: -8s; }
+.glow[data-tone='c5'] { background: var(--t-c5); animation-delay: -2s; }
+@keyframes drift {
+  to {
+    transform: translate(2cqw, 1.5cqw) scale(1.06);
+  }
+}
+
+.meta {
+  position: absolute;
+  left: 3.42cqw;
+  top: 2.74cqw;
+  right: 3.42cqw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+}
+.meta dt {
+  font-family: var(--font-mono);
+  font-size: max(10px, 0.94cqw);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--t-ink-soft);
+}
+.meta dd {
+  margin: 4px 0 0;
+  font-size: max(12px, 1.2cqw);
+  font-weight: 500;
+  color: var(--t-ink);
+}
+
+.word {
+  position: absolute;
+  margin: 0;
+  font-family: var(--t-font-display);
+  font-size: 20.46cqw;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+  color: var(--t-ink);
+}
+
+.curl,
+.rays {
+  position: absolute;
+  overflow: visible;
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.curl {
+  stroke: var(--t-ink);
+  transform: rotate(-26.92deg) scaleY(-1);
+}
+.rays {
+  stroke: var(--t-accent);
+  transform: rotate(-22.81deg);
+}
+
+.device {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 2.9cqw;
+  background: var(--t-dark);
+  box-shadow: 0 30px 60px var(--t-shadow-deep);
+  transform: rotate(5deg);
+  transition: transform 600ms var(--ease-spring);
+}
+.band:hover .device {
+  transform: rotate(2deg) translateY(-1cqw);
+}
+.device img {
+  position: absolute;
+  width: calc(100% - 2.74cqw);
+  height: calc(100% - 2.74cqw);
+  object-fit: cover;
+  border-radius: 1.7cqw;
+}
+
+.sticker {
+  position: absolute;
+  padding: 0.86cqw 1.54cqw;
+  border-radius: 6px;
+  background: var(--t-accent);
+  font-size: max(12px, 1.88cqw);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--t-on-dark);
+  translate: -50% -50%;
+  rotate: -14deg;
+  transition: rotate 400ms var(--ease-spring);
+}
+.sticker:hover {
+  rotate: -4deg;
+}
+
+.note {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 1.37cqw 1.71cqw;
+  border-radius: 18px;
+  background: var(--t-c2);
+  font-family: var(--t-font-hand);
+  font-size: max(13px, 2.23cqw);
+  line-height: 1.05;
+  white-space: nowrap;
+  color: var(--t-ink);
+  translate: -50% -50%;
+  rotate: -7deg;
+}
+
+.pills {
+  position: absolute;
+  left: 3.42cqw;
+  bottom: 3.6cqw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pills li {
+  padding: 9px 16px;
+  border-radius: 99px;
+  background: var(--t-on-dark);
+  font-size: max(12px, 1.2cqw);
+  font-weight: 500;
+  color: var(--t-ink);
+}
+.scroll {
+  position: absolute;
+  right: 6.5cqw;
+  bottom: 4.1cqw;
+  font-family: var(--font-mono);
+  font-size: max(10px, 1.03cqw);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--t-ink);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 8px;
+  }
+  .band {
+    aspect-ratio: 3 / 4;
+    border-radius: 22px;
+  }
+  .meta {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+  }
+  .word {
+    top: 22cqw !important;
+    left: 4cqw !important;
+    font-size: 22cqw;
+    white-space: normal;
+    max-width: 92cqw;
+  }
+  .device {
+    left: 14cqw !important;
+    top: 78cqw !important;
+    width: 80cqw !important;
+    height: 58cqw !important;
+  }
+  .sticker {
+    left: 76cqw !important;
+    top: 74cqw !important;
+  }
+  .note {
+    left: 26cqw !important;
+    top: 112cqw !important;
+  }
+  .curl,
+  .rays,
+  .scroll {
+    display: none;
+  }
+  .pills {
+    bottom: 4cqw;
+  }
+}

@@ -1,0 +1,31 @@
+/* ------------------------------------------------------------------
+   Case themes — Figma collection "case · theme" (t/*), one mode per
+   project; raw palettes from "case · project palettes" (dd/, sm/, ob/,
+   ff/, lm/). CaseOverlay sets data-case="<slug>" on its root.
+   ------------------------------------------------------------------ */
+
+[data-case='dear-diary'] {
+  --t-bg: #fdf8ee;
+  --t-ink: #4a3b32;
+  --t-ink-soft: #746358;
+  --t-accent: #c96f6f;
+  --t-dark: #4a3b32;
+  --t-on-dark: #fdf8ee;
+  --t-c1: #e8a79b;
+  --t-c2: #f0c46a;
+  --t-c3: #a8c49c;
+  --t-c4: #c6b8e0;
+  --t-c5: #a9c3dc;
+  --t-band-1: #e9e4f3;
+  --t-band-2: #e0ebf2;
+  --t-band-3: #deeada;
+  --t-paper: #fae9c7;
+  --t-cover: #e8a79b;
+  --t-line: #e3d3b8;
+  --t-kraft: #e3d3b8;
+  --t-shadow: rgb(74 59 51 / 0.12);
+  --t-shadow-deep: rgb(74 59 51 / 0.25);
+  /* the app's own type (Dear Diary uses Patrick Hand) */
+  --t-font-hand: 'Patrick Hand', var(--font-hand);
+  --t-font-display: var(--font-sans);
+}

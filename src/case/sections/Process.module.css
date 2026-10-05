@@ -1,0 +1,128 @@
+.process {
+  padding: 32px 56px 56px;
+}
+.track {
+  position: relative;
+  margin-top: 64px;
+  min-height: 440px;
+}
+.wave {
+  position: absolute;
+  left: 5.15%;
+  top: 32px;
+  width: 85.3%;
+  height: 200px;
+  overflow: visible;
+}
+.wave path {
+  fill: none;
+  stroke: var(--t-ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 2 8;
+  opacity: 0.5;
+  vector-effect: non-scaling-stroke;
+  animation: march 30s linear infinite;
+}
+@keyframes march {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  padding-left: 2.2%;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.step[data-down] {
+  margin-top: 200px;
+}
+.num {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--t-dark);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--t-on-dark);
+  transition: transform 300ms var(--ease-spring);
+}
+.step[data-down] .num {
+  background: var(--t-accent);
+}
+.step:hover .num {
+  transform: scale(1.12) rotate(-8deg);
+}
+.stepTitle {
+  margin-top: 16px;
+  font-family: var(--t-font-display);
+  font-size: var(--fs-heading-s);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--t-ink);
+}
+.pills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+}
+.pills li {
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: var(--t-paper);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--t-ink);
+}
+
+@media (max-width: 900px) {
+  .process {
+    padding: 32px 20px 40px;
+  }
+  .track {
+    min-height: 0;
+    margin-top: 32px;
+  }
+  .wave {
+    display: none;
+  }
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 0 0 0 12px;
+    border-left: 2px dotted color-mix(in srgb, var(--t-ink) 40%, transparent);
+  }
+  .step,
+  .step[data-down] {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    column-gap: 16px;
+    margin-top: 0;
+  }
+  .num {
+    grid-row: span 2;
+    width: 52px;
+    height: 52px;
+    font-size: 1.25rem;
+  }
+  .stepTitle {
+    margin-top: 10px;
+  }
+  .pills {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

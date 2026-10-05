@@ -1,0 +1,217 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--backdrop);
+  animation: fadeIn 220ms var(--ease-out);
+}
+.overlay[data-closing] {
+  animation: fadeOut 180ms ease-in forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.scroller {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px var(--gutter) 40px;
+  scrollbar-gutter: stable;
+}
+
+/* ——— header (on the backdrop) ——— */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: var(--page-max);
+  margin: 0 auto 24px;
+  padding-right: 64px;
+  pointer-events: none;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 22px;
+  object-fit: cover;
+  object-position: 26% 0;
+}
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.caseTitle {
+  font-size: var(--fs-label-m);
+  color: var(--surface);
+}
+.byline {
+  font-size: var(--fs-label-s);
+  color: var(--canvas);
+  opacity: 0.7;
+}
+
+/* ——— the case sheet ——— */
+.sheet {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  overflow: clip;
+  border-radius: 24px;
+  background: var(--t-bg);
+  color: var(--t-ink);
+  animation: rise 360ms var(--ease-out);
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+.sheet > section {
+  scroll-margin-top: 64px;
+}
+.sheet > section:focus {
+  outline: none;
+}
+.overlay[data-closing] .sheet {
+  transform: translateY(24px);
+  transition: transform 180ms ease-in;
+}
+
+/* ——— close + rail (fixed, like Behance) ——— */
+.close {
+  position: fixed;
+  z-index: 3;
+  top: 24px;
+  right: 32px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.125rem;
+  transition: transform var(--dur-fast) var(--ease-spring);
+}
+.close:hover {
+  transform: rotate(90deg);
+}
+
+.rail {
+  position: fixed;
+  z-index: 3;
+  top: 112px;
+  right: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.railAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-label-s);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--surface);
+}
+.railCircle {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.125rem;
+  transition: transform var(--dur-fast) var(--ease-spring);
+}
+.railAction:hover .railCircle {
+  transform: translateY(-3px);
+}
+.railAction[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.railAction[aria-disabled='true']:hover .railCircle {
+  transform: none;
+}
+
+.missing {
+  display: grid;
+  place-items: center;
+  gap: 16px;
+  height: 100%;
+  color: var(--surface);
+}
+.pillBtn {
+  padding: 14px 22px;
+  border-radius: 99px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* the rail would cover the sheet on narrow desktops → tuck it */
+@media (max-width: 1400px) {
+  .scroller {
+    padding-right: max(var(--gutter), 110px);
+  }
+}
+
+/* phones/tablets: rail becomes a bottom bar */
+@media (max-width: 900px) {
+  .scroller {
+    padding: 16px 12px 112px;
+  }
+  .header {
+    padding-right: 56px;
+  }
+  .close {
+    top: 14px;
+    right: 14px;
+    width: 44px;
+    height: 44px;
+  }
+  .rail {
+    top: auto;
+    left: 50%;
+    right: auto;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    flex-direction: row;
+    gap: 6px;
+    padding: 6px;
+    border-radius: 18px;
+    background: var(--ink);
+    translate: -50% 0;
+    box-shadow: var(--shadow-float);
+  }
+  .railAction {
+    flex-direction: row;
+    gap: 8px;
+    padding: 4px 12px 4px 4px;
+    border-radius: 14px;
+  }
+  .railCircle {
+    width: 36px;
+    height: 36px;
+  }
+  .sheet {
+    border-radius: 18px;
+  }
+}

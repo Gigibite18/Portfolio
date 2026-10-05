@@ -1,5 +1,6 @@
 @import '../assets/fonts/gigi-hand.css';
 @import './tokens.css';
+@import './case-themes.css';
 
 *,
 *::before,

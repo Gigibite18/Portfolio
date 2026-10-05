@@ -1,0 +1,104 @@
+.scope {
+  padding: 24px 56px 48px;
+}
+.gantt {
+  position: relative;
+  margin-top: 28px;
+  padding: 24px 32px 32px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--t-band-2);
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--t-ink-soft);
+}
+/* week divider */
+.gantt::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 52px;
+  bottom: 20px;
+  width: 1px;
+  background: var(--t-ink);
+  opacity: 0.15;
+}
+.bars {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 20px -32px 0; /* bars use the full 1088px Figma track */
+}
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: var(--w);
+  margin-left: var(--x);
+  padding: 6px 6px 6px 18px;
+  border-radius: 99px;
+  background: var(--t-on-dark);
+  transform-origin: left center;
+  animation: grow 700ms var(--ease-out) both;
+  animation-delay: calc(var(--i) * 90ms);
+  transition: transform 200ms var(--ease-out);
+}
+.bar:hover {
+  transform: translateX(4px);
+}
+@keyframes grow {
+  from {
+    transform: scaleX(0.2);
+    opacity: 0;
+  }
+}
+.barLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--t-ink);
+}
+.barTag {
+  padding: 5px 10px;
+  border-radius: 99px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--t-ink);
+}
+.barTag[data-tone='c1'] { background: var(--t-c1); }
+.barTag[data-tone='c2'] { background: var(--t-c2); }
+.barTag[data-tone='c3'] { background: var(--t-c3); }
+.barTag[data-tone='c4'] { background: var(--t-c4); }
+.barTag[data-tone='c5'] { background: var(--t-c5); }
+
+@media (max-width: 760px) {
+  .scope {
+    padding: 16px 20px 32px;
+  }
+  .gantt {
+    padding: 20px 16px;
+  }
+  .columns,
+  .gantt::after {
+    display: none;
+  }
+  .bars {
+    margin-inline: 0;
+  }
+  .bar {
+    width: 100%;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,236 @@
+.research {
+  padding: 48px 56px 40px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 560px) minmax(0, 470px);
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+/* ——— empathy map ——— */
+.map {
+  position: relative;
+  aspect-ratio: 560 / 520;
+}
+.axisX,
+.axisY {
+  position: absolute;
+  background: var(--t-ink);
+  opacity: 0.25;
+}
+.axisX {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+}
+.axisY {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+}
+.quadrants {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.quadrant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 8px 0;
+}
+.quadrant:nth-child(odd) {
+  align-items: flex-end;
+  padding-right: 20%;
+}
+.quadrant:nth-child(even) {
+  align-items: flex-start;
+  padding-left: 11%;
+}
+.quadrant:nth-child(n + 3) {
+  padding-top: 80px;
+}
+.pill {
+  padding: 9px 18px;
+  border-radius: 99px;
+  font-size: var(--fs-label-m);
+  font-weight: 500;
+  color: var(--t-ink);
+  transition: transform 300ms var(--ease-spring);
+}
+.quadrant:hover .pill {
+  transform: rotate(-4deg) scale(1.06);
+}
+.pill[data-tone='c1'] { background: var(--t-c1); }
+.pill[data-tone='c2'] { background: var(--t-c2); }
+.pill[data-tone='c3'] { background: var(--t-c3); }
+.pill[data-tone='c4'] { background: var(--t-c4); }
+.hand {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  max-width: 100%;
+  font-family: var(--t-font-hand);
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: var(--t-ink);
+}
+.quadrant:nth-child(odd) .hand {
+  margin-right: -60px;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 32%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--t-dark);
+  translate: -50% -50%;
+}
+.center img {
+  width: 84%;
+  height: 84%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 500ms var(--ease-spring);
+}
+.map:hover .center img {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+/* ——— pinned notes ——— */
+.board {
+  position: relative;
+  min-height: 560px;
+}
+.links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.links path {
+  fill: none;
+  stroke: var(--t-ink);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+  opacity: 0.45;
+}
+.note {
+  position: absolute;
+  width: 270px;
+  padding: 28px 24px 24px;
+  border-radius: 18px;
+  box-shadow: 0 14px 28px var(--t-shadow);
+  color: var(--t-ink);
+  rotate: var(--r);
+  transition:
+    rotate 400ms var(--ease-spring),
+    translate 400ms var(--ease-spring);
+}
+.note:hover {
+  rotate: 0deg;
+  translate: 0 -4px;
+  z-index: 2;
+}
+.note[data-i='0'] { left: 3%; top: 0; }
+.note[data-i='1'] { right: -4%; top: 165px; }
+.note[data-i='2'] { left: 4%; top: 360px; }
+.note[data-tone='c1'] { background: var(--t-c1); }
+.note[data-tone='band-1'] { background: var(--t-band-1); }
+.note[data-tone='band-3'] { background: var(--t-band-3); }
+.pin {
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--t-accent);
+  box-shadow: 0 2px 4px var(--t-shadow-deep);
+  translate: -50% 0;
+}
+.noteTag {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  white-space: pre;
+}
+.noteText {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .map {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 640px) {
+  .research {
+    padding: 32px 20px;
+  }
+  .map {
+    aspect-ratio: auto;
+  }
+  .quadrants {
+    position: relative;
+    gap: 120px 12px;
+  }
+  .quadrant,
+  .quadrant:nth-child(odd),
+  .quadrant:nth-child(even),
+  .quadrant:nth-child(n + 3) {
+    align-items: flex-start;
+    padding: 0;
+  }
+  .quadrant:nth-child(odd) .hand {
+    margin-right: 0;
+  }
+  .hand {
+    font-size: 1rem;
+  }
+  .axisX,
+  .axisY {
+    display: none;
+  }
+  .center {
+    width: 120px;
+  }
+  .board {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-height: 0;
+    padding-top: 16px;
+  }
+  .links {
+    display: none;
+  }
+  .note {
+    position: relative;
+    inset: auto !important;
+    width: auto;
+  }
+}

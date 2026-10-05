@@ -1,0 +1,121 @@
+.problem {
+  padding: 16px;
+}
+.band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 56px 64px;
+  border-radius: 32px;
+  background: var(--t-dark);
+  color: var(--t-on-dark);
+}
+.band > :first-child {
+  align-self: stretch;
+}
+.title {
+  max-width: 860px;
+  margin-top: 46px;
+  font-family: var(--t-font-display);
+  font-size: clamp(2.125rem, 1.4rem + 2.6vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+.body {
+  max-width: 640px;
+  margin-top: 28px;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0.78;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  width: 100%;
+  max-width: 1024px;
+  margin-top: 56px;
+}
+.card {
+  position: relative;
+  min-height: 250px;
+  padding: 24px 30px 28px;
+  overflow: hidden;
+  border-radius: 24px;
+  color: var(--t-ink);
+  transition: transform 300ms var(--ease-spring);
+}
+.card:nth-child(1) { --tilt: -2deg; }
+.card:nth-child(2) { --tilt: 1.5deg; }
+.card:nth-child(3) { --tilt: -1.5deg; }
+.card:hover {
+  transform: translateY(-6px) rotate(var(--tilt));
+}
+.card[data-tone='c1'] { background: var(--t-c1); }
+.card[data-tone='c5'] { background: var(--t-c5); }
+.card[data-tone='on-dark'] { background: var(--t-on-dark); }
+
+.glow {
+  position: absolute;
+  left: 120px;
+  top: 120px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(40px);
+  transition: transform 600ms var(--ease-out);
+}
+.glow[data-tone='c2'] { background: var(--t-c2); }
+.glow[data-tone='c4'] { background: var(--t-c4); }
+.card:hover .glow {
+  transform: translate(-30px, -20px);
+}
+
+.tag,
+.cardTitle,
+.cardBody {
+  position: relative;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--t-ink-soft);
+}
+.card[data-tone='c1'] .tag,
+.card[data-tone='c5'] .tag {
+  color: var(--t-ink);
+  opacity: 0.8;
+}
+.cardTitle {
+  margin-top: 20px;
+  font-family: var(--t-font-display);
+  font-size: 1.625rem;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+.cardBody {
+  margin-top: 14px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .band {
+    padding: 32px 20px 40px;
+  }
+}
+@media (max-width: 640px) {
+  .problem {
+    padding: 8px;
+  }
+}
