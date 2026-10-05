@@ -80,3 +80,28 @@
   --t-font-hand: var(--font-hand);
   --t-font-display: var(--font-sans);
 }
+
+[data-case='fonfon'] {
+  --t-bg: #f2fafc;
+  --t-ink: #2b3138;
+  --t-ink-soft: #4a525b;
+  --t-accent: #0c6b7f;
+  --t-dark: #2b3138;
+  --t-on-dark: #ffffff;
+  --t-c1: #7fdcec;
+  --t-c2: #ffc400;
+  --t-c3: #8fd11a;
+  --t-c4: #f9aa9f;
+  --t-c5: #cdaef2;
+  --t-band-1: #dbeef4;
+  --t-band-2: #fff7d9;
+  --t-band-3: #eef8dd;
+  --t-paper: #ffffff;
+  --t-cover: #0c6b7f;
+  --t-line: #cdaef2;
+  --t-kraft: #dbeef4;
+  --t-shadow: rgb(43 49 56 / 0.12);
+  --t-shadow-deep: rgb(43 49 56 / 0.25);
+  --t-font-hand: var(--font-hand);
+  --t-font-display: var(--font-sans);
+}

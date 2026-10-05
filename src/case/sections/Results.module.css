@@ -87,6 +87,9 @@
   letter-spacing: -0.01em;
   color: var(--t-ink-soft);
 }
+.quote [data-tone='ink'] {
+  color: var(--t-ink);
+}
 .quote figcaption {
   display: flex;
   align-items: center;

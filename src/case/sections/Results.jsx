@@ -1,6 +1,7 @@
 import Section from './Section'
 import SectionHeader from '../SectionHeader'
 import HandSlot from '../../components/HandSlot'
+import TwoTone from '../TwoTone'
 import styles from './Results.module.css'
 
 const BARS = 68
@@ -31,7 +32,9 @@ export default function Results({ data }) {
         <div className={styles.side}>
           {data.quote && (
             <figure className={styles.quote}>
-              <blockquote>{data.quote.text}</blockquote>
+              <blockquote>
+                <TwoTone parts={Array.isArray(data.quote.text) ? data.quote.text : [data.quote.text]} />
+              </blockquote>
               <figcaption>
                 {data.quote.avatar ? (
                   <img src={data.quote.avatar} alt="" width="40" height="40" />
@@ -46,7 +49,7 @@ export default function Results({ data }) {
             </figure>
           )}
           {data.flower && (
-            <div className={styles.flower} data-tone={data.flower.tone ?? 'c5'}>
+            <div className={styles.flower} data-tone={data.flower.tone ?? 'c4'}>
               <svg viewBox="0 0 220 220" aria-hidden="true">
                 {Array.from({ length: 8 }, (_, i) => {
                   const a = (i / 8) * Math.PI * 2

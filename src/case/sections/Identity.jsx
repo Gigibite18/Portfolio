@@ -79,7 +79,7 @@ export default function Identity({ data }) {
                 <span className={styles.ramp} aria-hidden="true">
                   {[100, 65, 40, 20].map((p) => (
                     <span key={p} style={{ '--p': `${p}%` }}>
-                      {c.name} {p}%
+                      {c.rampName ?? c.name} {p}%
                     </span>
                   ))}
                 </span>
