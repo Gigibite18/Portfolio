@@ -1,0 +1,63 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 7px;
+  border-radius: 999px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.outline {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+/* digits are not in Gigi Hand 2 → years read better in Inter */
+.outline[data-tone='year'] {
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.status {
+  background: var(--green-tint);
+  font-size: var(--fs-label-s);
+  font-weight: 500;
+  color: var(--green);
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--green-tint);
+  }
+  50% {
+    box-shadow: 0 0 0 5px var(--green-tint);
+  }
+}
+
+.draw {
+  background: var(--pink-soft);
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  color: var(--pink-ink);
+}
+
+.eyebrow {
+  padding-inline: 0 12px;
+  font-family: var(--font-hand);
+  font-size: var(--fs-label-s);
+  color: var(--ink);
+}
+.eyebrow[data-tone='accent'] {
+  color: var(--purple);
+}

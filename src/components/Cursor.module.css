@@ -1,0 +1,48 @@
+.cursor {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  user-select: none;
+}
+.arrow {
+  width: 27px;
+  height: 28px;
+  margin: 0 0 -6px -1px;
+}
+.label {
+  margin-left: 16px;
+  padding: 5px 10px 6px;
+  border-radius: 4px;
+  font-size: var(--fs-label-m);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--surface);
+  white-space: nowrap;
+}
+.cursor[data-color='purple'] .label {
+  background: var(--purple);
+}
+.cursor[data-color='blue'] .label {
+  background: var(--blue);
+}
+.cursor[data-color='pink'] .label {
+  background: var(--pink);
+}
+
+/* slow idle drift, like someone else is on the file */
+.float {
+  animation: drift 7s ease-in-out infinite;
+}
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(14px, -8px);
+  }
+  60% {
+    transform: translate(-6px, 10px);
+  }
+}

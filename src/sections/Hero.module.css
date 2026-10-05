@@ -1,0 +1,389 @@
+.hero {
+  position: relative;
+  overflow: clip;
+  padding: 23px var(--gutter) 96px;
+  background-color: var(--canvas);
+  background-image: url('/art/dot-grid-tile.png');
+  background-size: 50px 50px;
+}
+
+/* ——— top bar ——— */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* logo hangs 12px outside the content column, like the Figma frame */
+  margin-inline: max(-12px, calc((100% - var(--page-max) - 24px) / 2));
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--fs-label-m);
+  font-weight: 500;
+  color: var(--ink-muted);
+  border-radius: 36px;
+}
+.logo img {
+  width: 64px;
+  height: 64px;
+  border-radius: 36px;
+  object-fit: cover;
+  object-position: 26% 0;
+  transition: transform 300ms var(--ease-spring);
+}
+.logo:hover img {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+/* ——— layout ——— */
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  column-gap: 40px;
+  max-width: var(--page-max);
+  margin: 47px auto 0;
+  scroll-margin-top: 120px;
+}
+
+.intro {
+  position: relative;
+  min-width: 0;
+}
+
+.frameLabel {
+  display: flex;
+}
+
+/* ——— title ——— */
+.titleWrap {
+  position: relative;
+  margin-top: 40px;
+  font-size: var(--fs-display-xl);
+}
+.title {
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+.line {
+  display: block;
+  white-space: nowrap;
+}
+.line3 {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.2em;
+  margin-top: 0.01em;
+}
+.draws {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 0.8;
+  letter-spacing: 0;
+  color: var(--coral);
+  transform-origin: 20% 80%;
+}
+
+.selected {
+  position: relative;
+  display: inline-block;
+}
+.selection {
+  position: absolute;
+  inset: 0.05em -0.1em -0.025em -0.1em;
+  border: 2px solid var(--purple);
+  pointer-events: none;
+}
+.handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--purple);
+  background: var(--surface);
+}
+.handle[data-pos='tl'] { left: -8px; top: -8px; }
+.handle[data-pos='tr'] { right: -8px; top: -8px; }
+.handle[data-pos='bl'] { left: -8px; bottom: -8px; }
+.handle[data-pos='br'] { right: -8px; bottom: -8px; }
+.badge {
+  position: absolute;
+  left: -2px;
+  top: -32px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: var(--purple);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--surface);
+  white-space: nowrap;
+}
+.gigiCursor {
+  position: absolute;
+  left: calc(100% - 4px);
+  top: calc(100% - 6px);
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+/* decorations live in em so they scale with the title */
+.pill {
+  position: absolute;
+  left: 4.4em;
+  top: 1.217em;
+  width: 1.3em;
+  min-height: 0;
+  height: 0.767em;
+  font-size: 1em;
+}
+.pill figcaption {
+  font-size: 0.217em;
+}
+.star {
+  position: absolute;
+  left: -0.52em;
+  top: 1.17em;
+}
+.sparkle {
+  position: absolute;
+  left: 5.23em;
+  top: 1.83em;
+}
+
+/* ——— bio + ctas ——— */
+.bio {
+  max-width: 560px;
+  margin-top: 78px;
+  font-size: var(--fs-body-l);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--ink-muted);
+}
+.ctas {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 50px;
+}
+.youCursor {
+  position: absolute;
+  left: 300px;
+  top: 40px;
+}
+
+/* ——— right column ——— */
+.side {
+  position: relative;
+  align-self: start;
+  margin-top: 42px;
+}
+.redline {
+  position: relative;
+  width: 24px;
+  height: 40px;
+  margin-top: 14px;
+}
+.redlineBar {
+  position: absolute;
+  inset: 2px 0 auto 0;
+  height: 12px;
+  border-inline: 1.5px solid var(--coral);
+}
+.redlineBar::after {
+  content: '';
+  position: absolute;
+  inset: 5px 0 auto;
+  height: 1.5px;
+  background: var(--coral);
+}
+.redlineText {
+  position: absolute;
+  left: -6px;
+  top: 16px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  color: var(--coral);
+}
+
+.heart {
+  position: absolute;
+  z-index: 3;
+  left: 400px;
+  top: -47px;
+}
+.flower {
+  position: absolute;
+  z-index: 3;
+  left: 456px;
+  top: 256px;
+}
+.avatar {
+  position: absolute;
+  z-index: 3;
+  left: 302px;
+  top: 510px;
+  width: 211px;
+  height: auto;
+  transform: rotate(10.84deg);
+  transition: transform 400ms var(--ease-spring);
+}
+.avatar:hover {
+  transform: rotate(2deg) scale(1.04);
+}
+
+.scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  color: var(--ink-muted);
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob {
+  50% {
+    transform: translate(-50%, 4px);
+  }
+}
+
+/* ——— Illustration mode (Profile Card toggle) ——— */
+.burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.burstItem {
+  position: absolute;
+  animation: popIn 520ms var(--ease-spring) both;
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-40deg);
+  }
+}
+.hero[data-illustration] .draws {
+  animation: scribble 900ms ease-in-out infinite;
+}
+@keyframes scribble {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(-4deg) scale(1.04);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+}
+.hero[data-illustration] .star,
+.hero[data-illustration] .sparkle,
+.hero[data-illustration] .heart,
+.hero[data-illustration] .flower {
+  animation: dance 700ms ease-in-out infinite alternate;
+}
+@keyframes dance {
+  to {
+    transform: translate(var(--x, 0), calc(var(--y, 0px) - 8px)) rotate(calc(var(--r, 0deg) + 10deg)) scale(1.1);
+  }
+}
+
+/* ——— responsive ——— */
+@media (max-width: 1180px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 72px;
+  }
+  .side {
+    justify-self: center;
+    width: min(420px, 100%);
+    margin-top: 0;
+  }
+  .heart {
+    left: auto;
+    right: -24px;
+  }
+  .flower {
+    left: -40px;
+    top: 300px;
+  }
+  .avatar {
+    left: auto;
+    right: -90px;
+    top: auto;
+    bottom: -150px;
+    width: 170px;
+  }
+  .hero {
+    padding-bottom: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-bottom: 150px;
+  }
+  .topbar {
+    margin-inline: 0;
+  }
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+  .logo span {
+    max-width: 9ch;
+    line-height: 1.2;
+  }
+  .grid {
+    margin-top: 32px;
+  }
+  .titleWrap {
+    margin-top: 48px;
+  }
+  .pill,
+  .youCursor,
+  .scroll {
+    display: none;
+  }
+  .sparkle {
+    left: auto;
+    right: 0;
+    top: 1.2em;
+  }
+  .star {
+    left: auto;
+    right: 0.2em;
+    top: -0.7em;
+  }
+  .bio {
+    margin-top: 40px;
+  }
+  .ctas {
+    margin-top: 32px;
+  }
+  .flower {
+    left: -12px;
+    top: -36px;
+  }
+  .heart {
+    right: -8px;
+  }
+  .avatar {
+    right: -16px;
+    bottom: -140px;
+    width: 140px;
+  }
+}

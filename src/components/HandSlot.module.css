@@ -1,0 +1,38 @@
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px;
+  border: 2px dashed var(--slot-c, var(--purple));
+  background: var(--purple-soft);
+  color: var(--slot-c, var(--purple));
+  text-align: center;
+  transform: rotate(var(--r, 0deg));
+  transition: transform 260ms var(--ease-spring);
+}
+.slot[data-color='pink'] {
+  --slot-c: var(--pink);
+}
+.slot[data-color='coral'] {
+  --slot-c: var(--coral);
+}
+
+.square {
+  border-radius: 28px;
+  aspect-ratio: 1;
+}
+.pill {
+  border-radius: 46px;
+  min-height: 92px;
+}
+.pencil {
+  font-size: var(--fs-hand-l);
+  line-height: 1;
+}
+.label {
+  font-family: var(--font-hand);
+  font-size: var(--fs-hand-m);
+  line-height: 1.1;
+}

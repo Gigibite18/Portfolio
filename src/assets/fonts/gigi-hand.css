@@ -1,0 +1,12 @@
+/* Gigi Hand 2 — handwriting font made from gigi's own calligraphy.
+   Regular only. a–z / A–Z + accents; ss01 = alternate l and W.
+   No digits or ! ? : ; ( ) / @ & quotes → those fall back to Caveat. */
+@font-face {
+  font-family: 'Gigi Hand 2';
+  src:
+    url('./GigiHand2-Regular.woff2') format('woff2'),
+    url('./GigiHand2-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

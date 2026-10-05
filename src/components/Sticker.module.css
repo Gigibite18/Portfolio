@@ -1,0 +1,45 @@
+.sticker {
+  display: inline-block;
+  line-height: 0;
+  filter: var(--shadow-sticker);
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg));
+  transition:
+    transform 260ms var(--ease-spring),
+    filter var(--dur-fast);
+}
+.sticker img {
+  max-width: none;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .sticker:hover {
+    animation: wiggle 420ms ease-in-out;
+  }
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg));
+  }
+  25% {
+    transform: translate(var(--x, 0), var(--y, 0)) rotate(calc(var(--r, 0deg) - 10deg)) scale(1.08);
+  }
+  60% {
+    transform: translate(var(--x, 0), var(--y, 0)) rotate(calc(var(--r, 0deg) + 8deg)) scale(1.08);
+  }
+}
+
+.draggable {
+  cursor: grab;
+  touch-action: none;
+  border-radius: 12px;
+}
+.draggable[data-dragging] {
+  cursor: grabbing;
+  z-index: 20;
+  animation: none;
+  transition: none;
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(calc(var(--r, 0deg) + 6deg)) scale(1.12);
+  filter: drop-shadow(0 12px 14px rgb(0 0 0 / 0.18));
+}
