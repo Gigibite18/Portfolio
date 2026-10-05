@@ -55,3 +55,28 @@
   --t-font-hand: var(--font-hand);
   --t-font-display: var(--font-sans);
 }
+
+[data-case='orbia'] {
+  --t-bg: #f4f9fe;
+  --t-ink: #0a2a40;
+  --t-ink-soft: #09517f;
+  --t-accent: #0077be;
+  --t-dark: #0a2a40;
+  --t-on-dark: #f4f9fe;
+  --t-c1: #90b9ef;
+  --t-c2: #fabbed;
+  --t-c3: #debbfa;
+  --t-c4: #b4e5bc;
+  --t-c5: #f4ce9b;
+  --t-band-1: #eaf5fd;
+  --t-band-2: #f3ecfd;
+  --t-band-3: #fdeff9;
+  --t-paper: #ffffff;
+  --t-cover: #0077be;
+  --t-line: #f4ce9b;
+  --t-kraft: #eaf5fd;
+  --t-shadow: rgb(10 42 64 / 0.12);
+  --t-shadow-deep: rgb(10 42 64 / 0.25);
+  --t-font-hand: var(--font-hand);
+  --t-font-display: var(--font-sans);
+}

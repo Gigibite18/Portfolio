@@ -1,11 +1,13 @@
 import dearDiary from './dear-diary'
 import stillMe from './still-me'
+import orbia from './orbia'
 import { CASE_ORDER } from '../projects'
 
 // one data file per case; overlay renders whatever is registered here
 export const CASES = {
   'dear-diary': dearDiary,
   'still-me': stillMe,
+  orbia,
 }
 
 export function getCase(slug) {
