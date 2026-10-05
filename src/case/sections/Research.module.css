@@ -36,7 +36,7 @@
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: 1fr 1fr;
 }
 .quadrant {
@@ -120,15 +120,7 @@
   object-fit: cover;
   transition: transform 500ms var(--ease-spring);
 }
-.map:hover .centerSlot {
-  width: 84%;
-  height: 84%;
-  background: var(--t-paper);
-}
-.hand[data-soft] {
-  color: var(--t-ink-soft);
-}
-.center img {
+.map:hover .center img {
   transform: rotate(-8deg) scale(1.05);
 }
 
