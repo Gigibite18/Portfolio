@@ -39,6 +39,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  background: var(--t-band-1);
   border-radius: 1.84cqw;
 }
 .slot {

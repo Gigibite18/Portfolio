@@ -44,8 +44,8 @@ function ChatVisual({ block }) {
       <div className={styles.chat}>
         <p className={styles.chatEyebrow}>{c.eyebrow}</p>
         <p className={styles.chatTitle}>
-          {c.title.map((l) => (
-            <span key={l}>{l}</span>
+          {c.title.map((l, i) => (
+            <span key={i}>{l}</span>
           ))}
         </p>
         <p className={styles.bubbleMe}>{c.me}</p>
@@ -127,8 +127,8 @@ export default function Features({ data }) {
             {data.builtIn.map((b) => (
               <li key={b.title.join(' ')} className={styles.tile} data-tone={b.tone}>
                 <p className={styles.tileTitle}>
-                  {b.title.map((l) => (
-                    <span key={l}>{l}</span>
+                  {b.title.map((l, i) => (
+                    <span key={i}>{l}</span>
                   ))}
                 </p>
                 <p className={styles.tileBody}>{b.body}</p>

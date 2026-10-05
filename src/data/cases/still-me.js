@@ -192,7 +192,10 @@ export default {
       n: 7,
       title: [soft('The eyeliner mini-game, up close')],
       caption: 'Mini-game — eyeliner   1366 × 1024',
-      screen: { placeholder: 'paste: eyeliner screen' },
+      screen: {
+        src: '/images/still-me/eyeliner.webp',
+        alt: 'Eyeliner mini-game: “Drag to create the eyeliner. Drag slowly.”',
+      },
       frame: { x: 244, y: 116, w: 600, h: 419, device: false },
       selection: { x: 640, y: 262, w: 170, h: 200, tag: 'Eyeliner path' },
       cursor: { label: 'you', x: 820, y: 380 },
@@ -327,7 +330,12 @@ export default {
       body: 'Thank you, vózinha Maridee, for never letting me forget who I am.',
       weave: { base: 'c5', v: 'c3', h: 'c1' },
       polaroids: [
-        { placeholder: 'paste: credits photo', caption: 'for vózinha Maridee ♡', rotate: -8 },
+        {
+          src: '/images/still-me/credits.webp',
+          alt: 'Credits screen dedicated to grandma Maridee',
+          caption: 'for vózinha Maridee ♡',
+          rotate: -8,
+        },
         { placeholder: 'paste: friendship scene', caption: 'she held my hands with love', rotate: 7 },
       ],
       credits: [

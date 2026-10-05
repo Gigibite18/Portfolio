@@ -25,7 +25,11 @@ export default {
     sticker: { text: '6 steps', x: 883, y: 313 },
     note: { lines: ['how far are', 'you from', 'someone?'], x: 189, y: 474 },
     pills: ['iPhone', 'For people who want to meet who is nearby'],
-    screen: { placeholder: 'paste: Connections screen' },
+    screen: {
+      src: '/images/orbia/connections.webp',
+      alt: 'Orbia Connections screen: avatars linked around you',
+      fit: 'contain',
+    },
   },
 
   sections: [
@@ -299,7 +303,7 @@ export default {
       body: 'Maybe someone interesting is closer than you think.',
       weave: { base: 'c5', v: 'c3', h: 'c1' },
       polaroids: [
-        { placeholder: 'paste: Connections', caption: 'Connections', rotate: -8 },
+        { src: '/images/orbia/connections.webp', alt: 'Orbia Connections screen', caption: 'Connections', rotate: -8 },
         { placeholder: 'paste: your card', caption: 'your card', rotate: 7 },
       ],
       credits: [

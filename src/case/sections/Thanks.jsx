@@ -20,8 +20,8 @@ export default function Thanks({ data, onBack, onNext }) {
         <div className={styles.copy}>
           <SectionHeader eyebrow={data.eyebrow} onDark />
           <h2 id={`${data.id}-title`} className={styles.title}>
-            {data.title.map((l) => (
-              <span key={l}>{l}</span>
+            {data.title.map((l, i) => (
+              <span key={i}>{l}</span>
             ))}
           </h2>
           <p className={styles.body}>{data.body}</p>
@@ -39,7 +39,7 @@ export default function Thanks({ data, onBack, onNext }) {
             <figure key={p.caption} className={styles.polaroid} style={{ '--r': `${p.rotate}deg` }} data-i={i}>
               <span className={styles.photo}>
                 {p.src ? (
-                  <img src={p.src} alt={p.alt} loading="lazy" style={p.crop} />
+                  <img src={p.src} alt={p.alt} loading="lazy" style={p.crop} data-cover={p.crop ? undefined : true} />
                 ) : (
                   <MediaSlot label={p.placeholder} className={styles.photoSlot} />
                 )}

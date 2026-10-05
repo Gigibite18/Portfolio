@@ -25,7 +25,10 @@ export default {
     sticker: { text: 'Ssss!', x: 873, y: 310 },
     note: { lines: ['say “sapo”', 'and the frog', 'walks'], x: 194, y: 474 },
     pills: ['iPad · landscape', 'For kids practising speech sounds'],
-    screen: { placeholder: 'paste: home island' },
+    screen: {
+      src: '/images/fonfon/home-island.webp',
+      alt: 'Fonfon home: the FonFon mascot on an island under the logo',
+    },
   },
 
   sections: [
@@ -159,7 +162,10 @@ export default {
       n: 7,
       title: [soft('The frog game, up close')],
       caption: 'Fonema — S   1366 × 1024',
-      screen: { placeholder: 'paste: frog game screen' },
+      screen: {
+        src: '/images/fonfon/frog-game.webp',
+        alt: 'Frog game: “Faça o fonema Sssss para o sapo pegar a mosca!”, round 1 of 10',
+      },
       frame: { x: 244, y: 116, w: 600, h: 419, device: false },
       selection: { x: 640, y: 262, w: 170, h: 200, tag: 'Frog' },
       cursor: { label: 'you', x: 820, y: 380 },
@@ -294,8 +300,13 @@ export default {
       body: 'Ready for the next challenge?',
       weave: { base: 'c5', v: 'c3', h: 'c1' },
       polaroids: [
-        { placeholder: 'paste: home island', caption: 'home island', rotate: -8 },
-        { placeholder: 'paste: badge', caption: '“O emblema do S é seu!”', rotate: 7 },
+        { src: '/images/fonfon/home-island.webp', alt: 'Fonfon home island', caption: 'home island', rotate: -8 },
+        {
+          src: '/images/fonfon/badge-card.webp',
+          alt: 'Badge card: “Você conseguiu!”',
+          caption: '“O emblema do S é seu!”',
+          rotate: 7,
+        },
       ],
       credits: [
         ['THIS PROJECT WAS MADE AS', '[context: personal / academy / client]'],

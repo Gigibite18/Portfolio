@@ -19,8 +19,8 @@ export default function Research({ data }) {
                   {q.label}
                 </span>
                 <p className={styles.hand} data-soft={data.handSoft || undefined}>
-                  {q.text.map((l) => (
-                    <span key={l}>{l}</span>
+                  {q.text.map((l, i) => (
+                    <span key={i}>{l}</span>
                   ))}
                 </p>
               </li>
@@ -53,8 +53,8 @@ export default function Research({ data }) {
               <span className={styles.pin} aria-hidden="true" />
               <figcaption className={styles.noteTag}>{n.tag}</figcaption>
               <p className={styles.noteText}>
-                {n.text.map((l) => (
-                  <span key={l}>{l}</span>
+                {n.text.map((l, i) => (
+                  <span key={i}>{l}</span>
                 ))}
               </p>
             </figure>

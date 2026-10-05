@@ -25,7 +25,11 @@ export default {
     sticker: { text: 'safe area ✓', x: 905, y: 319 },
     note: { lines: ['care, calm', 'and safety'], x: 184, y: 460 },
     pills: ['iPhone + Lumina tracker', 'For families of autistic children'],
-    screen: { placeholder: 'paste: map screen' },
+    screen: {
+      src: '/images/lumina/map.webp',
+      alt: 'Lumina map: the Costa family, kids on the map and safe areas',
+      fit: 'contain',
+    },
   },
 
   sections: [
@@ -164,10 +168,10 @@ export default {
       n: 7,
       title: [soft('The family map, up close')],
       caption: 'Mapa — Família Costa   393 × 852',
-      screen: { placeholder: 'paste: map screen' },
+      screen: { src: '/images/lumina/map.webp', alt: 'Lumina map screen with kids, battery levels and safe areas' },
       frame: { x: 244, y: 116, w: 600, h: 419, device: false },
-      selection: { x: 640, y: 262, w: 170, h: 200, tag: 'Safe area' },
-      cursor: { label: 'you', x: 820, y: 380 },
+      selection: { x: 452, y: 372, w: 184, h: 100, tag: 'Safe area' },
+      cursor: { label: 'you', x: 632, y: 462 },
       pinTone: 'dark',
       comments: [
         {
@@ -299,8 +303,13 @@ export default {
       body: 'Care, calm and safety, for every family.',
       weave: { base: 'c5', v: 'c3', h: 'c1' },
       polaroids: [
-        { placeholder: 'paste: map', caption: 'family map', rotate: -8 },
-        { placeholder: 'paste: NFC profile', caption: 'NFC profile', rotate: 7 },
+        { src: '/images/lumina/map.webp', alt: 'Lumina family map', caption: 'family map', rotate: -8 },
+        {
+          src: '/images/lumina/nfc-profile.webp',
+          alt: 'NFC profile of a child: support level, age, blood type and sensitivities',
+          caption: 'NFC profile',
+          rotate: 7,
+        },
       ],
       credits: [
         ['THIS PROJECT WAS MADE FOR', 'Campus Mobile 2026'],

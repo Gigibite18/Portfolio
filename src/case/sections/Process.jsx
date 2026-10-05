@@ -22,8 +22,8 @@ export default function Process({ data }) {
                 {s.title}
               </h3>
               <ul className={styles.pills}>
-                {s.pills.map((p) => (
-                  <li key={p}>{p}</li>
+                {s.pills.map((p, i) => (
+                  <li key={i}>{p}</li>
                 ))}
               </ul>
             </li>

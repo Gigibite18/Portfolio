@@ -16,8 +16,8 @@ export default function About({ data }) {
           </h2>
           <p className={styles.body}>{data.body}</p>
           <ul className={styles.pills}>
-            {data.pills.map((p) => (
-              <li key={p}>{p}</li>
+            {data.pills.map((p, i) => (
+              <li key={i}>{p}</li>
             ))}
           </ul>
           {data.role && (

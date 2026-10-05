@@ -103,6 +103,10 @@
 .band:hover .device {
   transform: rotate(2deg) translateY(-1cqw);
 }
+.device img[data-fit='contain'] {
+  object-fit: contain;
+  background: var(--t-band-1);
+}
 .slot {
   position: absolute;
   border-radius: 1.7cqw;

@@ -57,7 +57,7 @@ export default function CaseHero({ data }) {
 
         <div className={styles.device} style={{ left: u(312.5), top: u(322), width: u(520), height: u(380) }}>
           {screen.src ? (
-            <img src={screen.src} alt={screen.alt} style={{ inset: u(16) }} />
+            <img src={screen.src} alt={screen.alt} style={{ inset: u(16) }} data-fit={screen.fit} />
           ) : (
             <MediaSlot label={screen.placeholder} className={styles.slot} style={{ inset: u(16) }} />
           )}
@@ -67,14 +67,14 @@ export default function CaseHero({ data }) {
           {sticker.text}
         </span>
         <p className={styles.note} style={{ left: u(note.x), top: u(note.y) }}>
-          {note.lines.map((l) => (
-            <span key={l}>{l}</span>
+          {note.lines.map((l, i) => (
+            <span key={i}>{l}</span>
           ))}
         </p>
 
         <ul className={styles.pills}>
-          {data.pills.map((p) => (
-            <li key={p}>{p}</li>
+          {data.pills.map((p, i) => (
+            <li key={i}>{p}</li>
           ))}
         </ul>
         <p className={styles.scroll} aria-hidden="true">
