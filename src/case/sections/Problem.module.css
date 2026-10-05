@@ -48,15 +48,27 @@
   color: var(--t-ink);
   transition: transform 300ms var(--ease-spring);
 }
-.card:nth-child(1) { --tilt: -2deg; }
-.card:nth-child(2) { --tilt: 1.5deg; }
-.card:nth-child(3) { --tilt: -1.5deg; }
+.card:nth-child(1) {
+  --tilt: -2deg;
+}
+.card:nth-child(2) {
+  --tilt: 1.5deg;
+}
+.card:nth-child(3) {
+  --tilt: -1.5deg;
+}
 .card:hover {
   transform: translateY(-6px) rotate(var(--tilt));
 }
-.card[data-tone='c1'] { background: var(--t-c1); }
-.card[data-tone='c5'] { background: var(--t-c5); }
-.card[data-tone='on-dark'] { background: var(--t-on-dark); }
+.card[data-tone='c1'] {
+  background: var(--t-c1);
+}
+.card[data-tone='c5'] {
+  background: var(--t-c5);
+}
+.card[data-tone='on-dark'] {
+  background: var(--t-on-dark);
+}
 
 .glow {
   position: absolute;
@@ -68,8 +80,12 @@
   filter: blur(40px);
   transition: transform 600ms var(--ease-out);
 }
-.glow[data-tone='c2'] { background: var(--t-c2); }
-.glow[data-tone='c4'] { background: var(--t-c4); }
+.glow[data-tone='c2'] {
+  background: var(--t-c2);
+}
+.glow[data-tone='c4'] {
+  background: var(--t-c4);
+}
 .card:hover .glow {
   transform: translate(-30px, -20px);
 }
@@ -103,6 +119,57 @@
   margin-top: 14px;
   font-size: 0.875rem;
   line-height: 1.4;
+}
+
+/* numbered variant */
+.card[data-numbered] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.card[data-numbered] .cardTitle {
+  margin-top: 12px;
+  font-size: 1.0625rem;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+.num {
+  position: relative;
+  margin-top: 8px;
+  font-family: var(--t-font-display);
+  font-size: 5.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  transition: transform 400ms var(--ease-spring);
+}
+.num[data-accent] {
+  color: var(--t-accent);
+}
+.card:hover .num {
+  transform: scale(1.08) rotate(-4deg);
+}
+.foot {
+  position: relative;
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--t-ink-soft);
+}
+.card[data-tone='c1'] .foot,
+.card[data-tone='c5'] .foot {
+  color: var(--t-ink);
+  opacity: 0.8;
+}
+.footnote {
+  margin-top: 28px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
 }
 
 @media (max-width: 900px) {

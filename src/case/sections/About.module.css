@@ -72,6 +72,40 @@
   color: var(--t-ink);
 }
 
+.byline {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  color: var(--t-ink-soft);
+}
+.panelLabel {
+  position: absolute;
+  left: 40px;
+  top: 36px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--t-ink-soft);
+}
+.panel[data-align='left'] .stats {
+  left: 176px;
+  right: auto;
+  top: 70px;
+  align-items: flex-start;
+  gap: 32px;
+  text-align: left;
+}
+.artSlot {
+  position: absolute;
+  left: -60px;
+  bottom: -54px;
+  width: 220px;
+  height: 220px;
+  background: var(--t-paper);
+  border-color: var(--t-ink-soft);
+}
 .panel {
   position: relative;
   min-height: 476px;

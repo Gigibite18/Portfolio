@@ -107,10 +107,22 @@
   border: 2px solid var(--purple);
   background: var(--surface);
 }
-.handle[data-pos='tl'] { left: -8px; top: -8px; }
-.handle[data-pos='tr'] { right: -8px; top: -8px; }
-.handle[data-pos='bl'] { left: -8px; bottom: -8px; }
-.handle[data-pos='br'] { right: -8px; bottom: -8px; }
+.handle[data-pos='tl'] {
+  left: -8px;
+  top: -8px;
+}
+.handle[data-pos='tr'] {
+  right: -8px;
+  top: -8px;
+}
+.handle[data-pos='bl'] {
+  left: -8px;
+  bottom: -8px;
+}
+.handle[data-pos='br'] {
+  right: -8px;
+  bottom: -8px;
+}
 .badge {
   position: absolute;
   left: -2px;

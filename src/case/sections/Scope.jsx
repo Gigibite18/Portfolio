@@ -12,7 +12,12 @@ export default function Scope({ data }) {
       <div className={styles.gantt}>
         <div className={styles.columns} aria-hidden="true">
           {data.columns.map((c) => (
-            <span key={c}>{c}</span>
+            <span key={c.label} style={{ left: `${(c.x / W) * 100}%` }}>
+              {c.label}
+            </span>
+          ))}
+          {data.dividers.map((x) => (
+            <i key={x} className={styles.divider} style={{ left: `${(x / W) * 100}%` }} />
           ))}
         </div>
         <ol className={styles.bars}>

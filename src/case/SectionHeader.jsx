@@ -11,7 +11,16 @@ export function Spark({ className = '' }) {
 
 /** Case section header: mono eyebrow with spark + "NN —— 10" counter,
  *  then an optional two-tone title. `onDark` flips the colours. */
-export default function SectionHeader({ eyebrow, n, total = 10, title, titleId, onDark = false, as: H = 'h2', className = '' }) {
+export default function SectionHeader({
+  eyebrow,
+  n,
+  total = 10,
+  title,
+  titleId,
+  onDark = false,
+  as: H = 'h2',
+  className = '',
+}) {
   return (
     <div className={`${styles.header} ${className}`} data-on-dark={onDark || undefined}>
       <div className={styles.eyebrowRow}>
@@ -27,13 +36,15 @@ export default function SectionHeader({ eyebrow, n, total = 10, title, titleId, 
       </div>
       {title && (
         <H id={titleId} className={styles.title}>
-          {Array.isArray(title[0]) && Array.isArray(title[0][0])
-            ? title.map((line, i) => (
-                <span key={i} className={styles.line}>
-                  <TwoTone parts={line} />
-                </span>
-              ))
-            : <TwoTone parts={title} />}
+          {Array.isArray(title[0]) && Array.isArray(title[0][0]) ? (
+            title.map((line, i) => (
+              <span key={i} className={styles.line}>
+                <TwoTone parts={line} />
+              </span>
+            ))
+          ) : (
+            <TwoTone parts={title} />
+          )}
         </H>
       )}
     </div>

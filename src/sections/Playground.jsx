@@ -44,9 +44,7 @@ export default function Playground() {
   const drawing = useRef(null)
 
   const shuffle = () => {
-    setStickers((list) =>
-      list.map((s) => ({ ...s, x: rand(40, 1110), y: rand(250, 560), r: rand(-25, 25) })),
-    )
+    setStickers((list) => list.map((s) => ({ ...s, x: rand(40, 1110), y: rand(250, 560), r: rand(-25, 25) })))
     setStrokes([])
     setStamps([])
     setRound((n) => n + 1)
@@ -98,7 +96,9 @@ export default function Playground() {
             I also draw things
           </h2>
           <ScribbleUnderline width={400} height={30} className={styles.scribble} />
-          <p className={styles.desc}>Grab a sticker and drag it around — everything on this board was drawn by me. ✋</p>
+          <p className={styles.desc}>
+            Grab a sticker and drag it around — everything on this board was drawn by me. ✋
+          </p>
         </div>
 
         <ul className={styles.slots}>

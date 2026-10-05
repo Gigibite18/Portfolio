@@ -1,5 +1,6 @@
 import Section from './Section'
 import SectionHeader from '../SectionHeader'
+import MediaSlot from '../../components/MediaSlot'
 import styles from './Research.module.css'
 
 /** Research: empathy map around the character + pinned notes. */
@@ -17,7 +18,7 @@ export default function Research({ data }) {
                 <span className={styles.pill} data-tone={q.tone}>
                   {q.label}
                 </span>
-                <p className={styles.hand}>
+                <p className={styles.hand} data-soft={data.handSoft || undefined}>
                   {q.text.map((l) => (
                     <span key={l}>{l}</span>
                   ))}
@@ -27,7 +28,11 @@ export default function Research({ data }) {
           </ul>
           {data.center && (
             <span className={styles.center}>
-              <img src={data.center.src} alt={data.center.alt} width="152" height="152" loading="lazy" />
+              {data.center.src ? (
+                <img src={data.center.src} alt={data.center.alt} width="152" height="152" loading="lazy" />
+              ) : (
+                <MediaSlot label={data.center.placeholder} round className={styles.centerSlot} />
+              )}
             </span>
           )}
         </div>
@@ -38,7 +43,13 @@ export default function Research({ data }) {
             <path d="M324 321C316 382 276 405 204 421" />
           </svg>
           {data.notes.map((n, i) => (
-            <figure key={n.tag} className={styles.note} data-tone={n.tone} style={{ '--r': `${n.rotate}deg` }} data-i={i}>
+            <figure
+              key={n.tag}
+              className={styles.note}
+              data-tone={n.tone}
+              style={{ '--r': `${n.rotate}deg` }}
+              data-i={i}
+            >
               <span className={styles.pin} aria-hidden="true" />
               <figcaption className={styles.noteTag}>{n.tag}</figcaption>
               <p className={styles.noteText}>

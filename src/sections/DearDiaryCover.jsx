@@ -34,7 +34,10 @@ export default function DearDiaryCover() {
   return (
     <div className={styles.cover} aria-hidden="true">
       <div className={styles.stage}>
-        <div className={`${styles.ipad} ${styles.back}`} style={{ left: u(308), top: u(30), width: u(344), height: u(248), rotate: '-4deg' }}>
+        <div
+          className={`${styles.ipad} ${styles.back}`}
+          style={{ left: u(308), top: u(30), width: u(344), height: u(248), rotate: '-4deg' }}
+        >
           <span className={styles.screen} style={{ inset: u(12) }}>
             <img src="/images/dear-diary/07-ask-lia.webp" alt="" />
           </span>
@@ -44,13 +47,27 @@ export default function DearDiaryCover() {
           <span
             key={i}
             className={styles.doodle}
-            style={{ left: u(x), top: u(y), width: u(w), height: u(h), rotate: r ? `${r}deg` : undefined, '--d': `${(i % 7) * 0.4}s` }}
+            style={{
+              left: u(x),
+              top: u(y),
+              width: u(w),
+              height: u(h),
+              rotate: r ? `${r}deg` : undefined,
+              '--d': `${(i % 7) * 0.4}s`,
+            }}
           >
-            <img src="/art/dd-doodles-sprite.webp" alt="" style={{ width: `${iw}%`, height: `${ih}%`, left: `${il}%`, top: `${it}%` }} />
+            <img
+              src="/art/dd-doodles-sprite.webp"
+              alt=""
+              style={{ width: `${iw}%`, height: `${ih}%`, left: `${il}%`, top: `${it}%` }}
+            />
           </span>
         ))}
 
-        <div className={`${styles.ipad} ${styles.front}`} style={{ left: u(28.8), top: u(175), width: u(404), height: u(289), rotate: '2deg' }}>
+        <div
+          className={`${styles.ipad} ${styles.front}`}
+          style={{ left: u(28.8), top: u(175), width: u(404), height: u(289), rotate: '2deg' }}
+        >
           <span className={styles.screen} style={{ inset: u(12) }}>
             <img src="/images/dear-diary/03-ch1-discovery.webp" alt="" />
           </span>
@@ -61,7 +78,11 @@ export default function DearDiaryCover() {
         <div className={styles.lia} style={{ left: u(494), top: u(176), width: u(160.136), height: u(294.606) }}>
           <img src="/art/dd-lia-outline.svg" alt="" className={styles.liaOutline} />
           <span className={styles.liaArt} style={{ left: u(6.71), top: u(2.93), width: u(145.89), height: u(279.057) }}>
-            <img src="/art/dd-lia-sticker.webp" alt="" style={{ width: '720.93%', height: '533.13%', left: '-266.57%', top: '-185.87%' }} />
+            <img
+              src="/art/dd-lia-sticker.webp"
+              alt=""
+              style={{ width: '720.93%', height: '533.13%', left: '-266.57%', top: '-185.87%' }}
+            />
           </span>
         </div>
       </div>

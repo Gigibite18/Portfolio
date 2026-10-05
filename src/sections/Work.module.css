@@ -67,10 +67,22 @@
   border: 2px solid var(--blue);
   background: var(--surface);
 }
-.selection i[data-pos='tl'] { left: -6px; top: -6px; }
-.selection i[data-pos='tr'] { right: -6px; top: -6px; }
-.selection i[data-pos='bl'] { left: -6px; bottom: -6px; }
-.selection i[data-pos='br'] { right: -6px; bottom: -6px; }
+.selection i[data-pos='tl'] {
+  left: -6px;
+  top: -6px;
+}
+.selection i[data-pos='tr'] {
+  right: -6px;
+  top: -6px;
+}
+.selection i[data-pos='bl'] {
+  left: -6px;
+  bottom: -6px;
+}
+.selection i[data-pos='br'] {
+  right: -6px;
+  bottom: -6px;
+}
 
 /* ——— featured ——— */
 .featured {

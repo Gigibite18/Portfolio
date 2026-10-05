@@ -3,8 +3,20 @@ import styles from './SkillsTicker.module.css'
 
 // exact order of the Figma ticker (one full cycle)
 const SKILLS = [
-  'UX Research', 'UI Design', 'Prototyping', 'Design Systems', 'Usability Testing', 'Illustration', 'Storytelling',
-  'UX Research', 'UI Design', 'Prototyping', 'Design Systems', 'Usability Testing', 'Illustration', 'Branding',
+  'UX Research',
+  'UI Design',
+  'Prototyping',
+  'Design Systems',
+  'Usability Testing',
+  'Illustration',
+  'Storytelling',
+  'UX Research',
+  'UI Design',
+  'Prototyping',
+  'Design Systems',
+  'Usability Testing',
+  'Illustration',
+  'Branding',
 ]
 
 function Row({ hidden }) {
@@ -13,7 +25,9 @@ function Row({ hidden }) {
       {SKILLS.map((s, i) => (
         <li key={i} className={styles.item}>
           <span>{s}</span>
-          <span className={styles.spark} aria-hidden="true">✦</span>
+          <span className={styles.spark} aria-hidden="true">
+            ✦
+          </span>
         </li>
       ))}
     </ul>

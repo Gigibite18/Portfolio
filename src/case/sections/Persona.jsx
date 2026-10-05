@@ -1,5 +1,6 @@
 import Section from './Section'
 import SectionHeader from '../SectionHeader'
+import MediaSlot from '../../components/MediaSlot'
 import styles from './Persona.module.css'
 
 const CX = 220
@@ -27,7 +28,11 @@ function Radar({ values, label }) {
     <figure className={styles.radar}>
       <figcaption className={styles.radarLabel}>{label}</figcaption>
       <div className={styles.radarBox}>
-        <svg viewBox="0 0 440 420" role="img" aria-label={values.map(([n, v]) => `${n} ${Math.round(v * 100)}%`).join(', ')}>
+        <svg
+          viewBox="0 0 440 420"
+          role="img"
+          aria-label={values.map(([n, v]) => `${n} ${Math.round(v * 100)}%`).join(', ')}
+        >
           {[1, 0.75, 0.5, 0.25].map((f) => (
             <polygon key={f} className={styles.ring} points={ring(k, f)} />
           ))}
@@ -55,11 +60,12 @@ function Radar({ values, label }) {
 /** Persona: character sheet with callouts + personality radar. */
 export default function Persona({ data }) {
   const [c1, c2, c3, c4] = data.callouts
+  const sp = data.stickerPos ?? { x: 431.7, y: 295.9 }
   return (
     <Section id={data.id} className={styles.persona} labelledBy={`${data.id}-title`}>
       <SectionHeader eyebrow={data.eyebrow} n={data.n} title={data.title} titleId={`${data.id}-title`} />
       <div className={styles.grid}>
-        <figure className={styles.sheet}>
+        <figure className={styles.sheet} data-tone={data.sheetTone}>
           <svg className={styles.callouts} viewBox="0 0 600 540" aria-hidden="true">
             <path d="M192.75 68.75H232.75L262.75 128.75" />
             <path d="M422.75 78.75H398.75L372.75 126.75" />
@@ -75,17 +81,33 @@ export default function Persona({ data }) {
             ))}
           </svg>
           <span className={styles.halo} aria-hidden="true" />
-          <span className={styles.art} role="img" aria-label={data.art.alt}>
-            <img src={data.art.src} alt="" style={data.art.crop} loading="lazy" />
-          </span>
-          <span className={styles.sticker} aria-hidden="true">
+          {data.art.src ? (
+            <span className={styles.art} role="img" aria-label={data.art.alt}>
+              <img src={data.art.src} alt="" style={data.art.crop} loading="lazy" />
+            </span>
+          ) : (
+            <MediaSlot label={data.art.placeholder} round className={styles.artSlot} />
+          )}
+          <span
+            className={styles.sticker}
+            style={{ left: `${(sp.x / 600) * 100}%`, top: `${(sp.y / 540) * 100}%` }}
+            aria-hidden="true"
+          >
             {data.sticker}
           </span>
           <figcaption className="visually-hidden">{data.callouts.join(', ')}</figcaption>
-          <span className={styles.callout} style={{ left: '6.7%', top: '11.1%' }} aria-hidden="true">{c1}</span>
-          <span className={styles.callout} style={{ left: '71.7%', top: '13%' }} aria-hidden="true">{c2}</span>
-          <span className={styles.callout} style={{ left: '6.7%', top: '79.6%' }} aria-hidden="true">{c3}</span>
-          <span className={styles.callout} style={{ left: '66.7%', top: '81.5%' }} aria-hidden="true">{c4}</span>
+          <span className={styles.callout} style={{ left: '6.7%', top: '11.1%' }} aria-hidden="true">
+            {c1}
+          </span>
+          <span className={styles.callout} style={{ left: '71.7%', top: '13%' }} aria-hidden="true">
+            {c2}
+          </span>
+          <span className={styles.callout} style={{ left: '6.7%', top: '79.6%' }} aria-hidden="true">
+            {c3}
+          </span>
+          <span className={styles.callout} style={{ left: '66.7%', top: '81.5%' }} aria-hidden="true">
+            {c4}
+          </span>
         </figure>
 
         <div className={styles.side}>

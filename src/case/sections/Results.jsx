@@ -46,7 +46,7 @@ export default function Results({ data }) {
             </figure>
           )}
           {data.flower && (
-            <div className={styles.flower}>
+            <div className={styles.flower} data-tone={data.flower.tone ?? 'c5'}>
               <svg viewBox="0 0 220 220" aria-hidden="true">
                 {Array.from({ length: 8 }, (_, i) => {
                   const a = (i / 8) * Math.PI * 2

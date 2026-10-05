@@ -10,25 +10,26 @@
   background: var(--t-band-2);
 }
 .columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  inset: 0;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  text-align: center;
   color: var(--t-ink-soft);
 }
-/* week divider */
-.gantt::after {
-  content: '';
+.columns span {
   position: absolute;
-  left: 50%;
+  top: 24px;
+  white-space: nowrap;
+}
+.divider {
+  position: absolute;
   top: 52px;
   bottom: 20px;
   width: 1px;
   background: var(--t-ink);
-  opacity: 0.15;
+  opacity: 0.12;
 }
 .bars {
   position: relative;
@@ -37,6 +38,7 @@
   flex-direction: column;
   gap: 14px;
   margin: 20px -32px 0; /* bars use the full 1088px Figma track */
+  padding-top: 24px;
 }
 .bar {
   display: flex;
@@ -77,11 +79,21 @@
   white-space: nowrap;
   color: var(--t-ink);
 }
-.barTag[data-tone='c1'] { background: var(--t-c1); }
-.barTag[data-tone='c2'] { background: var(--t-c2); }
-.barTag[data-tone='c3'] { background: var(--t-c3); }
-.barTag[data-tone='c4'] { background: var(--t-c4); }
-.barTag[data-tone='c5'] { background: var(--t-c5); }
+.barTag[data-tone='c1'] {
+  background: var(--t-c1);
+}
+.barTag[data-tone='c2'] {
+  background: var(--t-c2);
+}
+.barTag[data-tone='c3'] {
+  background: var(--t-c3);
+}
+.barTag[data-tone='c4'] {
+  background: var(--t-c4);
+}
+.barTag[data-tone='c5'] {
+  background: var(--t-c5);
+}
 
 @media (max-width: 760px) {
   .scope {
@@ -90,9 +102,11 @@
   .gantt {
     padding: 20px 16px;
   }
-  .columns,
-  .gantt::after {
+  .columns {
     display: none;
+  }
+  .bars {
+    padding-top: 0;
   }
   .bars {
     margin-inline: 0;

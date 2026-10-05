@@ -23,7 +23,9 @@ const ROWS = [
 /** Profile Card — a component's properties panel. Toggles really flip;
  *  the "core" ones spring back on. Illustration toggles the sticker mode. */
 export default function ProfileCard({ illustration, onIllustration }) {
-  const [on, setOn] = useState(() => Object.fromEntries(ROWS.filter((r) => r.type === 'toggle').map((r) => [r.label, true])))
+  const [on, setOn] = useState(() =>
+    Object.fromEntries(ROWS.filter((r) => r.type === 'toggle').map((r) => [r.label, true])),
+  )
   const [note, setNote] = useState(null)
   const timers = useRef([])
 

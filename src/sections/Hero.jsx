@@ -70,33 +70,33 @@ export default function Hero() {
           <FrameLabel name="Product Designer, 3 yrs of experience" className={styles.frameLabel} as="p" />
 
           <div className={styles.titleWrap}>
-          <h1 className={styles.title}>
-            <span className={styles.line}>
-              <span className={styles.selected}>
-                Product
-                <span className={styles.selection} ref={boxRef} aria-hidden="true">
-                  <i className={styles.handle} data-pos="tl" />
-                  <i className={styles.handle} data-pos="tr" />
-                  <i className={styles.handle} data-pos="bl" />
-                  <i className={styles.handle} data-pos="br" />
-                  <span className={styles.badge}>{size}</span>
-                  <Cursor label="gigi" color="purple" className={styles.gigiCursor} float />
+            <h1 className={styles.title}>
+              <span className={styles.line}>
+                <span className={styles.selected}>
+                  Product
+                  <span className={styles.selection} ref={boxRef} aria-hidden="true">
+                    <i className={styles.handle} data-pos="tl" />
+                    <i className={styles.handle} data-pos="tr" />
+                    <i className={styles.handle} data-pos="bl" />
+                    <i className={styles.handle} data-pos="br" />
+                    <span className={styles.badge}>{size}</span>
+                    <Cursor label="gigi" color="purple" className={styles.gigiCursor} float />
+                  </span>
                 </span>
               </span>
-            </span>
-            <span className={styles.line}>designer</span>
-            <span className={`${styles.line} ${styles.line3}`}>
-              who <span className={styles.draws}>draws.</span>
-            </span>
-          </h1>
-          <HandSlot label="photo pill" shape="pill" rotate={4} className={styles.pill} />
-          <DraggableSticker name="star" rotate={-4} scale={1.14} bounds={heroRef} className={styles.star} />
-          <DraggableSticker name="sparkle" bounds={heroRef} className={styles.sparkle} />
+              <span className={styles.line}>designer</span>
+              <span className={`${styles.line} ${styles.line3}`}>
+                who <span className={styles.draws}>draws.</span>
+              </span>
+            </h1>
+            <HandSlot label="photo pill" shape="pill" rotate={4} className={styles.pill} />
+            <DraggableSticker name="star" rotate={-4} scale={1.14} bounds={heroRef} className={styles.star} />
+            <DraggableSticker name="sparkle" bounds={heroRef} className={styles.sparkle} />
           </div>
 
           <p className={styles.bio}>
-            I&apos;m Giovana. A UX/UI designer with 3 years turning messy problems into clear, friendly products,
-            from research to pixel-perfect handoff. Lately I&apos;ve been drawing a lot, too.
+            I&apos;m Giovana. A UX/UI designer with 3 years turning messy problems into clear, friendly products, from
+            research to pixel-perfect handoff. Lately I&apos;ve been drawing a lot, too.
           </p>
 
           <div className={styles.ctas}>

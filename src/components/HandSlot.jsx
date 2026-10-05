@@ -2,7 +2,15 @@ import styles from './HandSlot.module.css'
 
 /** Hand-made Slot — dashed placeholder for an illustration/photo that
  *  doesn't exist yet. The label says what goes here. */
-export default function HandSlot({ label, shape = 'square', color = 'purple', pencil = true, rotate = 0, className = '', style }) {
+export default function HandSlot({
+  label,
+  shape = 'square',
+  color = 'purple',
+  pencil = true,
+  rotate = 0,
+  className = '',
+  style,
+}) {
   return (
     <figure
       className={`${styles.slot} ${styles[shape]} ${className}`}

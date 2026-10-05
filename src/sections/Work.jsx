@@ -108,7 +108,9 @@ function CaseCard({ item }) {
             {item.badge}
           </span>
         )}
-        {item.swiftLogo && <img className={styles.swiftLogo} src="/art/swift-logo.webp" alt="" width="84" height="84" />}
+        {item.swiftLogo && (
+          <img className={styles.swiftLogo} src="/art/swift-logo.webp" alt="" width="84" height="84" />
+        )}
         {item.cursor && (
           <Cursor
             label={item.cursor.label}

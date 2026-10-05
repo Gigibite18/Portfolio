@@ -17,8 +17,8 @@
   inset: 0 0 auto;
   height: 64px;
   background:
-    repeating-linear-gradient(to bottom, var(--t-line) 0 14px, transparent 14px 28px),
-    repeating-linear-gradient(to right, var(--t-ink) 0 14px, transparent 14px 28px);
+    repeating-linear-gradient(to bottom, var(--w-h) 0 14px, transparent 14px 28px),
+    repeating-linear-gradient(to right, var(--w-v) 0 14px, transparent 14px 28px), var(--w-base);
 }
 .copy {
   position: relative;
@@ -110,7 +110,34 @@
   position: absolute;
   max-width: none;
 }
+.photoSlot {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+.credits {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 56px 40px;
+  padding-top: 26px;
+  border-top: 1px solid color-mix(in srgb, var(--t-on-dark) 25%, transparent);
+}
+.credits dt {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
+}
+.credits dd {
+  margin: 6px 0 0;
+  font-size: var(--fs-label-m);
+  font-weight: 500;
+}
 .polaroid figcaption {
+  white-space: nowrap;
   font-family: var(--t-font-hand);
   font-size: 1.375rem;
   color: var(--t-ink);
@@ -147,5 +174,9 @@
   }
   .photos {
     min-height: 300px;
+  }
+  .credits {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0 24px 32px;
   }
 }

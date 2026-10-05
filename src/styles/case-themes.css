@@ -29,3 +29,29 @@
   --t-font-hand: 'Patrick Hand', var(--font-hand);
   --t-font-display: var(--font-sans);
 }
+
+[data-case='still-me'] {
+  --t-bg: #f8f4ec;
+  --t-ink: #3b2f25;
+  --t-ink-soft: #5c4a3a;
+  --t-accent: #5c4a3a;
+  --t-dark: #3b2f25;
+  --t-on-dark: #f8f4ec;
+  --t-c1: #f6c945;
+  --t-c2: #f2b8a2;
+  --t-c3: #a8c686;
+  --t-c4: #8fb8de;
+  --t-c5: #d9c3a5;
+  --t-band-1: #fbefcb;
+  --t-band-2: #f3e3d3;
+  --t-band-3: #e8f0dc;
+  --t-paper: #fffbf2;
+  --t-cover: #5c4a3a;
+  --t-line: #d9c3a5;
+  --t-kraft: #d9c3a5;
+  --t-shadow: rgb(59 47 37 / 0.12);
+  --t-shadow-deep: rgb(59 47 37 / 0.25);
+  /* gigi's own story → her own handwriting */
+  --t-font-hand: var(--font-hand);
+  --t-font-display: var(--font-sans);
+}

@@ -21,6 +21,18 @@
     linear-gradient(to bottom, color-mix(in srgb, var(--t-ink) 10%, transparent) 1px, transparent 1px);
   background-size: 6.67% 7.4%;
 }
+.sheet[data-tone='band-3'] {
+  background-color: var(--t-band-3);
+}
+.artSlot {
+  position: absolute;
+  left: 28.3%;
+  top: 20.4%;
+  width: 43.3%;
+  height: auto;
+  aspect-ratio: 1;
+  background: var(--t-bg);
+}
 .callouts {
   position: absolute;
   inset: 0;
@@ -35,6 +47,9 @@
 }
 .callouts circle {
   fill: var(--t-ink);
+}
+.sheet:has(.artSlot) .halo {
+  display: none;
 }
 .halo {
   position: absolute;
@@ -63,9 +78,8 @@
 }
 .sticker {
   position: absolute;
-  left: 71.9%;
-  top: 54.8%;
   padding: 7px 14px;
+  white-space: nowrap;
   border-radius: 6px;
   background: var(--t-accent);
   font-size: 1.25rem;

@@ -21,7 +21,10 @@ export const GRID = [
     title: 'Fonfon • Phonics that feel like play',
     summary: 'An iPad app that helps kids learn phonemes, designed with Antônio, iOS dev.',
     tags: ['iPad app', 'Kids', '2026'],
-    cover: { src: '/images/covers/fonfon.webp', alt: 'Fonfon cover: the blue FonFon mascot on an island under the "FonFon — Descubra o mundo dos sons" logo' },
+    cover: {
+      src: '/images/covers/fonfon.webp',
+      alt: 'Fonfon cover: the blue FonFon mascot on an island under the "FonFon — Descubra o mundo dos sons" logo',
+    },
     border: 'var(--dd-blue)',
     cursor: { label: 'you', color: 'blue', x: 298, y: 266 },
   },

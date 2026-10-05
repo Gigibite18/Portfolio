@@ -16,11 +16,21 @@
   border: 2px dashed var(--pink);
   border-radius: 4px;
 }
-.photo[data-frame='purple'] { border-color: var(--purple); }
-.photo[data-frame='coral'] { border-color: var(--coral); }
-.photo[data-frame='green'] { border-color: var(--green); }
-.photo[data-frame='yellow'] { border-color: var(--yellow); }
-.photo[data-frame='blue'] { border-color: var(--blue); }
+.photo[data-frame='purple'] {
+  border-color: var(--purple);
+}
+.photo[data-frame='coral'] {
+  border-color: var(--coral);
+}
+.photo[data-frame='green'] {
+  border-color: var(--green);
+}
+.photo[data-frame='yellow'] {
+  border-color: var(--yellow);
+}
+.photo[data-frame='blue'] {
+  border-color: var(--blue);
+}
 
 .photo img {
   width: 100%;

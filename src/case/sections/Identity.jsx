@@ -61,8 +61,19 @@ export default function Identity({ data }) {
 
       <ul className={styles.palette} aria-label="Colour palette">
         {data.palette.map((c, i) => (
-          <li key={c.name} className={styles.swatch} data-tone={c.tone} data-ramp={c.ramp || undefined} data-on-dark={c.onDark || undefined}>
-            <button type="button" className={styles.swatchBtn} onClick={() => copy(c.hex)} aria-label={`${c.name}, hex ${c.hex}. Copy`}>
+          <li
+            key={c.name}
+            className={styles.swatch}
+            data-tone={c.tone}
+            data-ramp={c.ramp || undefined}
+            data-on-dark={c.onDark || undefined}
+          >
+            <button
+              type="button"
+              className={styles.swatchBtn}
+              onClick={() => copy(c.hex)}
+              aria-label={`${c.name}, hex ${c.hex}. Copy`}
+            >
               <span className={styles.swatchName}>{c.name}</span>
               {c.ramp && (
                 <span className={styles.ramp} aria-hidden="true">

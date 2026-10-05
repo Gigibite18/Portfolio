@@ -16,11 +16,16 @@ export default {
       ['YEAR', '2026'],
       ['MY ROLE', 'All of it, solo ✦'],
     ],
-    word: 'Dear Diary',
-    sticker: "LIA'S STORY",
-    note: ['Dear Diary,', 'no wrong spot,', 'no timer.'],
+    word: { text: 'Dear Diary', x: 34.5, y: 110, size: 239 },
+    curl: { x: 41, y: 352, r: -26.92, flip: true },
+    rays: { x: 1098, y: 112, r: -22.81 },
+    sticker: { text: "LIA'S STORY", x: 910, y: 320 },
+    note: { lines: ['Dear Diary,', 'no wrong spot,', 'no timer.'], x: 204, y: 475 },
     pills: ['iPad app', 'For autistic girls'],
-    screen: { src: '/images/dear-diary/07-ask-lia.webp', alt: 'Dear Diary cover screen on iPad: a pink diary with Lia hugging a book' },
+    screen: {
+      src: '/images/dear-diary/07-ask-lia.webp',
+      alt: 'Dear Diary cover screen on iPad: a pink diary with Lia hugging a book',
+    },
   },
 
   sections: [
@@ -60,7 +65,11 @@ export default {
       eyebrow: 'SCOPE OF WORK',
       n: 2,
       title: ['Two weeks, ', ['start to finish', 'soft']],
-      columns: ['WEEK 1', 'WEEK 2'],
+      columns: [
+        { label: 'WEEK 1', x: 252 },
+        { label: 'WEEK 2', x: 780 },
+      ],
+      dividers: [544],
       // x / width in px on the 1088px Figma gantt
       bars: [
         { label: 'Moodboard', tag: 'look & feel', x: 32, w: 266.24, tone: 'c1' },
@@ -79,9 +88,26 @@ export default {
       title: 'A first period should not come as a surprise.',
       body: 'Talking with my friend about her cousin, an autistic girl with level 3 support needs who struggled a lot with her periods, showed me the gap. Books, blogs and articles for young people did the rest.',
       insights: [
-        { tag: 'INSIGHT 1 · FROM A FRIEND', title: 'Her cousin struggled a lot with her periods.', body: 'A real story, and the reason this diary exists.', tone: 'c1', glow: 'c2' },
-        { tag: 'INSIGHT 2 · FROM BOOKS & BLOGS', title: 'Knowing what comes next makes change feel safer.', body: 'So the diary tells the story before it happens.', tone: 'on-dark' },
-        { tag: 'INSIGHT 3 · FROM ONLINE RESEARCH', title: 'Plain words and pictures beat long explanations.', body: 'So every page is short, drawn and calm.', tone: 'c5', glow: 'c4' },
+        {
+          tag: 'INSIGHT 1 · FROM A FRIEND',
+          title: 'Her cousin struggled a lot with her periods.',
+          body: 'A real story, and the reason this diary exists.',
+          tone: 'c1',
+          glow: 'c2',
+        },
+        {
+          tag: 'INSIGHT 2 · FROM BOOKS & BLOGS',
+          title: 'Knowing what comes next makes change feel safer.',
+          body: 'So the diary tells the story before it happens.',
+          tone: 'on-dark',
+        },
+        {
+          tag: 'INSIGHT 3 · FROM ONLINE RESEARCH',
+          title: 'Plain words and pictures beat long explanations.',
+          body: 'So every page is short, drawn and calm.',
+          tone: 'c5',
+          glow: 'c4',
+        },
       ],
     },
     {
@@ -90,7 +116,10 @@ export default {
       nav: 'Research',
       eyebrow: 'EMPATHY MAP',
       n: 4,
-      title: [[['What girls ', 'soft'], 'go through'], [['& how the ', 'soft'], 'diary helps']],
+      title: [
+        [['What girls ', 'soft'], 'go through'],
+        [['& how the ', 'soft'], 'diary helps'],
+      ],
       center: { src: '/images/dear-diary/lia-portrait.webp', alt: 'Lia, the narrator' },
       quadrants: [
         { label: 'Says', tone: 'c1', text: ['Asks the same question', 'many times, to feel safe.'] },
@@ -101,7 +130,12 @@ export default {
       notes: [
         { tag: '/1  Pain point', text: ['Change with no warning, can feel really scary.'], tone: 'c1', rotate: 5 },
         { tag: '/2  Promise', text: ['No surprises.', 'Plain language.', 'Her own pace.'], tone: 'band-3', rotate: -4 },
-        { tag: '/3  Hardest part', text: ['Making Foundation Models answer like the diary: kind, short and true.'], tone: 'band-1', rotate: 3 },
+        {
+          tag: '/3  Hardest part',
+          text: ['Making Foundation Models answer like the diary: kind, short and true.'],
+          tone: 'band-1',
+          rotate: 3,
+        },
       ],
     },
     {
@@ -159,12 +193,35 @@ export default {
         alt: 'Chapter 1 spread: Lia’s diary entry on the left, the Body Map with feeling stickers on the right',
       },
       // positions on the 1088×620 Figma canvas
+      frame: { x: 212, y: 94, w: 626, h: 458, device: true },
       selection: { x: 618, y: 210, w: 85, h: 174 },
-      cursor: 'gigi',
+      cursor: { label: 'gigi', x: 703, y: 380 },
+      pinTone: 'cover',
       comments: [
-        { n: 1, title: 'Her words first', text: 'Lia’s diary entry opens every page, in plain language.', x: 12, y: 170, pin: { x: 222, y: 155 } },
-        { n: 2, title: 'No wrong spot', text: 'Drag a feeling sticker onto the body. Every drag also works as a tap.', x: 399, y: 395, pin: { x: 593, y: 376 } },
-        { n: 3, title: 'A real notebook', text: 'Chapter tabs sit on the edge, like paper ones.', x: 806, y: 271, pin: { x: 788, y: 325 } },
+        {
+          n: 1,
+          title: 'Her words first',
+          text: 'Lia’s diary entry opens every page, in plain language.',
+          x: 12,
+          y: 170,
+          pin: { x: 222, y: 155 },
+        },
+        {
+          n: 2,
+          title: 'No wrong spot',
+          text: 'Drag a feeling sticker onto the body. Every drag also works as a tap.',
+          x: 399,
+          y: 395,
+          pin: { x: 593, y: 376 },
+        },
+        {
+          n: 3,
+          title: 'A real notebook',
+          text: 'Chapter tabs sit on the edge, like paper ones.',
+          x: 806,
+          y: 271,
+          pin: { x: 788, y: 325 },
+        },
       ],
     },
     {
@@ -173,20 +230,27 @@ export default {
       nav: 'Features',
       eyebrow: 'FEATURES',
       n: 8,
-      hero: {
-        label: 'ASK LIA',
-        title: 'A notebook that answers kindly, and never makes things up.',
-        body: 'Runs on Apple’s Foundation Models, on the device, and always points to a trusted adult.',
-        screen: { src: '/images/dear-diary/ask-lia-notebook.webp', alt: 'The “little question notebook”: Lia answers a girl’s questions in short, kind sentences' },
-        // tags floating around the iPad (px on the 1088×440 band)
-        tags: [
-          { label: 'Body', tone: 'c1', x: 93, y: 69, r: 6 },
-          { label: 'Feelings', tone: 'c2', x: 451, y: 74, r: -5 },
-          { label: 'Pads', tone: 'c3', x: 63, y: 228, r: -4 },
-          { label: 'School', tone: 'c5', x: 468, y: 330, r: 4 },
-          { label: 'Who to tell', tone: 'c4', x: 48, y: 338, r: 0 },
-        ],
-      },
+      blocks: [
+        {
+          kind: 'device',
+          tone: 'band-1',
+          label: 'ASK LIA',
+          title: 'A notebook that answers kindly, and never makes things up.',
+          body: 'Runs on Apple’s Foundation Models, on the device, and always points to a trusted adult.',
+          screen: {
+            src: '/images/dear-diary/ask-lia-notebook.webp',
+            alt: 'The “little question notebook”: Lia answers a girl’s questions in short, kind sentences',
+          },
+          // tags floating around the iPad (px on the 1088×440 band)
+          tags: [
+            { label: 'Body', tone: 'c1', x: 93, y: 69, r: 6 },
+            { label: 'Feelings', tone: 'c2', x: 451, y: 74, r: -5 },
+            { label: 'Pads', tone: 'c3', x: 63, y: 228, r: -4 },
+            { label: 'School', tone: 'c5', x: 468, y: 330, r: 4 },
+            { label: 'Who to tell', tone: 'c4', x: 48, y: 338, r: 0 },
+          ],
+        },
+      ],
       builtInLabel: 'ALSO BUILT IN',
       builtIn: [
         { title: ['Shortcuts', '+ Siri'], body: 'The diary works with Shortcuts and Siri.', tone: 'c1' },

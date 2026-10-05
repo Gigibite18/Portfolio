@@ -1,0 +1,32 @@
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1.5px dashed color-mix(in srgb, var(--ink-muted) 60%, transparent);
+  border-radius: 16px;
+  background: var(--canvas);
+  color: var(--ink-muted);
+  text-align: center;
+}
+.slot[data-round] {
+  border-radius: 50%;
+  gap: 2px;
+}
+.glyph {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  opacity: 0.5;
+}
+.slot[data-round] .glyph {
+  font-size: 1.25rem;
+}
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-s);
+  font-weight: 500;
+  line-height: 1.3;
+}

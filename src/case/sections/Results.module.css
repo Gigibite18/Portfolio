@@ -52,11 +52,21 @@
   animation: rise 600ms var(--ease-out) both;
   animation-delay: calc(var(--i) * 8ms);
 }
-.barcode[data-tone='c1'] { --bc: var(--t-c1); }
-.barcode[data-tone='c2'] { --bc: var(--t-c2); }
-.barcode[data-tone='c3'] { --bc: var(--t-c3); }
-.barcode[data-tone='c4'] { --bc: var(--t-c4); }
-.barcode[data-tone='c5'] { --bc: var(--t-c5); }
+.barcode[data-tone='c1'] {
+  --bc: var(--t-c1);
+}
+.barcode[data-tone='c2'] {
+  --bc: var(--t-c2);
+}
+.barcode[data-tone='c3'] {
+  --bc: var(--t-c3);
+}
+.barcode[data-tone='c4'] {
+  --bc: var(--t-c4);
+}
+.barcode[data-tone='c5'] {
+  --bc: var(--t-c5);
+}
 @keyframes rise {
   from {
     transform: scaleY(0);
@@ -129,6 +139,12 @@
   position: absolute;
   inset: 20px;
   fill: var(--t-c5);
+}
+.flower[data-tone='c4'] svg {
+  fill: var(--t-c4);
+}
+.flower[data-tone='c1'] svg {
+  fill: var(--t-c1);
 }
 .flowerN,
 .flowerLabel {

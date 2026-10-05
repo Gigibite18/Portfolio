@@ -9,6 +9,9 @@
   border-radius: 32px;
   background: var(--t-bg);
 }
+.band[data-band='band-1'] {
+  background: var(--t-band-1);
+}
 
 .glow {
   position: absolute;
@@ -17,10 +20,21 @@
   filter: blur(6cqw);
   animation: drift 14s ease-in-out infinite alternate;
 }
-.glow[data-tone='c1'] { background: var(--t-c1); }
-.glow[data-tone='c2'] { background: var(--t-c2); animation-delay: -4s; }
-.glow[data-tone='c4'] { background: var(--t-c4); animation-delay: -8s; }
-.glow[data-tone='c5'] { background: var(--t-c5); animation-delay: -2s; }
+.glow[data-tone='c1'] {
+  background: var(--t-c1);
+}
+.glow[data-tone='c2'] {
+  background: var(--t-c2);
+  animation-delay: -4s;
+}
+.glow[data-tone='c4'] {
+  background: var(--t-c4);
+  animation-delay: -8s;
+}
+.glow[data-tone='c5'] {
+  background: var(--t-c5);
+  animation-delay: -2s;
+}
 @keyframes drift {
   to {
     transform: translate(2cqw, 1.5cqw) scale(1.06);
@@ -54,7 +68,6 @@
   position: absolute;
   margin: 0;
   font-family: var(--t-font-display);
-  font-size: 20.46cqw;
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.06em;
@@ -73,11 +86,9 @@
 }
 .curl {
   stroke: var(--t-ink);
-  transform: rotate(-26.92deg) scaleY(-1);
 }
 .rays {
   stroke: var(--t-accent);
-  transform: rotate(-22.81deg);
 }
 
 .device {
@@ -91,6 +102,10 @@
 }
 .band:hover .device {
   transform: rotate(2deg) translateY(-1cqw);
+}
+.slot {
+  position: absolute;
+  border-radius: 1.7cqw;
 }
 .device img {
   position: absolute;
@@ -176,7 +191,7 @@
   .word {
     top: 22cqw !important;
     left: 4cqw !important;
-    font-size: 22cqw;
+    font-size: 22cqw !important;
     white-space: normal;
     max-width: 92cqw;
   }

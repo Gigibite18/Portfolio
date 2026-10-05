@@ -17,11 +17,7 @@ export const Sticker = forwardRef(function Sticker(
 ) {
   const s = STICKERS[name]
   return (
-    <span
-      ref={ref}
-      className={`${styles.sticker} ${className}`}
-      style={{ '--r': `${rotate}deg`, ...style }}
-    >
+    <span ref={ref} className={`${styles.sticker} ${className}`} style={{ '--r': `${rotate}deg`, ...style }}>
       <img
         src={s.src}
         alt={decorative ? '' : s.alt}
