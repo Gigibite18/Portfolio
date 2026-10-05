@@ -91,7 +91,7 @@ export default function Playground() {
         onPointerCancel={onBoardUp}
       >
         <div className={styles.intro}>
-          <FrameLabel name="03 / playground" />
+          <FrameLabel name="03 / playground" className={styles.label} />
           <h2 id="playground-title" className={styles.title}>
             I also draw things
           </h2>

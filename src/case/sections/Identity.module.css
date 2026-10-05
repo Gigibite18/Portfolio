@@ -181,6 +181,16 @@
 .swatch[data-on-dark] {
   color: var(--t-on-dark);
 }
+/* light text on a mid-tone swatch: large/bold name + a chip behind the hex */
+.swatch[data-on-dark] .swatchName {
+  font-weight: 700;
+}
+.swatch[data-on-dark] .hex {
+  margin-left: -6px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--t-dark) 55%, transparent);
+}
 .swatchBtn {
   position: relative;
   display: flex;

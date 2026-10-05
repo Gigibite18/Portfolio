@@ -12,5 +12,5 @@
 }
 .label[data-selected],
 :global([data-frame-host]:is(:hover, :focus-visible, :focus-within)) .label {
-  color: var(--blue);
+  color: var(--blue-ink);
 }

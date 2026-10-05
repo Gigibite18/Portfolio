@@ -26,7 +26,7 @@
   background: var(--green-tint);
   font-size: var(--fs-label-s);
   font-weight: 500;
-  color: var(--green);
+  color: var(--green-ink);
 }
 .dot {
   width: 8px;
@@ -59,5 +59,5 @@
   color: var(--ink);
 }
 .eyebrow[data-tone='accent'] {
-  color: var(--purple);
+  color: var(--purple-ink);
 }

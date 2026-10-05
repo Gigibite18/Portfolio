@@ -9,6 +9,8 @@
   --t-ink: #4a3b32;
   --t-ink-soft: #746358;
   --t-accent: #c96f6f;
+  /* darker berry for buttons with cream text (AA) */
+  --t-accent-btn: #a35b57;
   --t-dark: #4a3b32;
   --t-on-dark: #fdf8ee;
   --t-c1: #e8a79b;

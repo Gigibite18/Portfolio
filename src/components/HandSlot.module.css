@@ -7,7 +7,7 @@
   padding: 16px;
   border: 2px dashed var(--slot-c, var(--purple));
   background: var(--purple-soft);
-  color: var(--slot-c, var(--purple));
+  color: var(--slot-text, var(--purple-ink));
   text-align: center;
   transform: rotate(var(--r, 0deg));
   transition: transform 260ms var(--ease-spring);

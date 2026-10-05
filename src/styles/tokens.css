@@ -25,6 +25,13 @@
   --pink-soft: #feebf5;
   --pink-ink: #d3006b;
 
+  /* text-only shades of the accents — same hue, AA on light fills */
+  --green-ink: #0b7a40;
+  --blue-ink: #0a6fbd;
+  --purple-ink: #5f4bd6;
+  --coral-ink: #e45a49;
+  --ink-muted-strong: #5c5c5c;
+
   /* translucent helpers derived from tokens */
   --green-tint: rgb(20 174 92 / 0.12);
   --blue-tint: rgb(13 153 255 / 0.12);

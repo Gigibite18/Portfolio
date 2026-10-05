@@ -35,6 +35,9 @@
   width: 44%;
   pointer-events: none;
 }
+.label {
+  color: var(--ink-muted-strong);
+}
 .title {
   margin-top: 8px;
   font-size: min(var(--fs-display-l), 6cqw);
@@ -54,7 +57,7 @@
   font-size: var(--fs-body-l);
   line-height: 1.5;
   letter-spacing: -0.005em;
-  color: var(--ink-muted);
+  color: var(--ink-muted-strong);
 }
 
 /* ——— hand-made slots ——— */
