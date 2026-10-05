@@ -123,9 +123,9 @@
     padding: 28px 20px;
   }
   .sealLeft {
-    transform: scale(0.8) rotate(8deg);
-    right: 8px;
-    top: 8px;
+    transform: scale(0.75) rotate(8deg);
+    right: -10px;
+    top: -34px;
   }
   .sealRight {
     display: none;

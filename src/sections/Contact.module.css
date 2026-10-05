@@ -184,5 +184,6 @@ a.pill:hover {
   .cursor {
     left: auto;
     right: 8px;
+    top: calc(100% - 26px);
   }
 }

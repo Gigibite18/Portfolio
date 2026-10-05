@@ -5,6 +5,7 @@
   padding: var(--section-y) var(--gutter) calc(var(--section-y) + 20px);
   background: var(--surface);
   scroll-margin-top: 0;
+  overflow-x: clip;
 }
 .top,
 .offscreen {

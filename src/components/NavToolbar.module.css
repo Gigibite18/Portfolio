@@ -81,4 +81,7 @@
     height: 44px;
     padding: 0 12px;
   }
+  .item::after {
+    display: none;
+  }
 }
