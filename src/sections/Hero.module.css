@@ -249,8 +249,12 @@
   transform: rotate(10.84deg);
   transition: transform 400ms var(--ease-spring);
 }
-.avatar:hover {
-  transform: rotate(2deg) scale(1.04);
+.avatar {
+  /* the drawing overlaps the card corner — never block the toggles */
+  pointer-events: none;
+}
+.side:hover .avatar {
+  transform: rotate(4deg) translateY(-4px);
 }
 
 .scroll {

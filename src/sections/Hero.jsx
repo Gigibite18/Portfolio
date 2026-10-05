@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import FrameLabel from '../components/FrameLabel'
 import Tag from '../components/Tag'
 import Button from '../components/Button'
@@ -10,14 +10,14 @@ import styles from './Hero.module.css'
 
 // extra stickers that pop in when "Illustration" is switched on
 const BURST = [
-  { name: 'heart', x: 8, y: 14, r: -12 },
-  { name: 'sparkle', x: 44, y: 9, r: 8 },
-  { name: 'flower', x: 30, y: 72, r: 14 },
-  { name: 'star', x: 54, y: 62, r: -6 },
-  { name: 'sparkle', x: 92, y: 88, r: -14 },
-  { name: 'heart', x: 62, y: 90, r: 10 },
-  { name: 'flower', x: 3, y: 86, r: -8 },
-  { name: 'star', x: 86, y: 6, r: 12 },
+  { name: 'heart', x: 2, y: 56, r: -12 },
+  { name: 'sparkle', x: 44, y: 4, r: 8 },
+  { name: 'flower', x: 60, y: 74, r: 14 },
+  { name: 'star', x: 57, y: 30, r: -6 },
+  { name: 'sparkle', x: 94, y: 90, r: -14 },
+  { name: 'heart', x: 62, y: 91, r: 10 },
+  { name: 'flower', x: 3, y: 90, r: -8 },
+  { name: 'star', x: 95, y: 42, r: 12 },
 ]
 
 /** Live "W × H" badge, like Figma's selection size readout. */
@@ -45,9 +45,10 @@ export default function Hero() {
   const [illustration, setIllustration] = useState(false)
   const [burstKey, setBurstKey] = useState(0)
 
-  useEffect(() => {
-    if (illustration) setBurstKey((k) => k + 1)
-  }, [illustration])
+  const toggleIllustration = (on) => {
+    setIllustration(on)
+    if (on) setBurstKey((k) => k + 1)
+  }
 
   return (
     <header id="top" className={styles.hero} ref={heroRef} data-illustration={illustration || undefined}>
@@ -109,7 +110,7 @@ export default function Hero() {
         </div>
 
         <div className={styles.side}>
-          <ProfileCard illustration={illustration} onIllustration={setIllustration} />
+          <ProfileCard illustration={illustration} onIllustration={toggleIllustration} />
           <div className={styles.redline} aria-hidden="true">
             <span className={styles.redlineBar} />
             <span className={styles.redlineText}>24px</span>
