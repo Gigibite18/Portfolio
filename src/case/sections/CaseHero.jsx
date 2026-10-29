@@ -24,7 +24,11 @@ export default function CaseHero({ data }) {
           ))}
         </dl>
 
-        <h1 className={styles.word} style={{ left: u(word.x), top: u(word.y), fontSize: u(word.size) }}>
+        <h1
+          className={styles.word}
+          data-font={word.font}
+          style={{ left: u(word.x), top: u(word.y), fontSize: u(word.size) }}
+        >
           {word.text}
         </h1>
 
@@ -66,20 +70,28 @@ export default function CaseHero({ data }) {
         <span className={styles.sticker} style={{ left: u(sticker.x), top: u(sticker.y) }}>
           {sticker.text}
         </span>
-        <p className={styles.note} style={{ left: u(note.x), top: u(note.y) }}>
+        <p
+          className={styles.note}
+          style={{ left: u(note.x), top: u(note.y), background: note.tone ? `var(--t-${note.tone})` : undefined }}
+        >
           {note.lines.map((l, i) => (
             <span key={i}>{l}</span>
           ))}
         </p>
 
-        <ul className={styles.pills}>
-          {data.pills.map((p, i) => (
-            <li key={i}>{p}</li>
-          ))}
-        </ul>
-        <p className={styles.scroll} aria-hidden="true">
-          SCROLL ↓
-        </p>
+        {/* cases redone in Figma dropped the pills + scroll hint */}
+        {data.pills && (
+          <>
+            <ul className={styles.pills}>
+              {data.pills.map((p, i) => (
+                <li key={i}>{p}</li>
+              ))}
+            </ul>
+            <p className={styles.scroll} aria-hidden="true">
+              SCROLL ↓
+            </p>
+          </>
+        )}
       </div>
     </section>
   )

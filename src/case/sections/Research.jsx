@@ -47,7 +47,8 @@ export default function Research({ data }) {
               key={n.tag}
               className={styles.note}
               data-tone={n.tone}
-              style={{ '--r': `${n.rotate}deg` }}
+              // `shift` nudges a note from its default slot (px, Figma deltas)
+              style={{ '--r': `${n.rotate}deg`, marginLeft: n.shift?.x, marginTop: n.shift?.y }}
               data-i={i}
             >
               <span className={styles.pin} aria-hidden="true" />

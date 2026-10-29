@@ -153,11 +153,26 @@
 }
 
 .missing {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
   height: 100%;
+  padding: 24px;
+  text-align: center;
   color: var(--surface);
+}
+.missing > p:first-child {
+  font-size: var(--fs-heading-m);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.missingNote {
+  margin-bottom: 8px;
+  font-family: var(--font-hand);
+  font-size: var(--fs-hand-m);
+  color: var(--pink);
 }
 .pillBtn {
   padding: 14px 22px;

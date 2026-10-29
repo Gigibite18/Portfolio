@@ -12,7 +12,9 @@ export default function Problem({ data }) {
         <h2 id={`${data.id}-title`} className={styles.title}>
           {data.title}
         </h2>
-        <p className={styles.body}>{data.body}</p>
+        <p className={styles.body} style={data.bodyWidth ? { maxWidth: data.bodyWidth } : undefined}>
+          {data.body}
+        </p>
         <ul className={styles.cards}>
           {data.insights.map((c) => (
             <li key={c.tag} className={styles.card} data-tone={c.tone} data-numbered={c.n ? true : undefined}>

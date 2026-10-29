@@ -30,6 +30,14 @@
   /* the app's own type (Dear Diary uses Patrick Hand) */
   --t-font-hand: 'Patrick Hand', var(--font-hand);
   --t-font-display: var(--font-sans);
+  --t-font-eyebrow: 'Patrick Hand', var(--font-mono);
+  --t-font-stats: var(--t-font-hand);
+  --t-stats-weight: 400;
+  --t-font-gantt: var(--t-font-hand);
+  --t-gantt-size: 1.3125rem;
+  --t-gantt-weight: 400;
+  /* Figma dropped the "NN —— 10" counter from this case */
+  --t-counter: none;
 }
 
 [data-case='still-me'] {
@@ -48,14 +56,29 @@
   --t-band-2: #f3e3d3;
   --t-band-3: #e8f0dc;
   --t-paper: #fffbf2;
-  --t-cover: #5c4a3a;
+  --t-cover: #fbe7a6;
   --t-line: #d9c3a5;
   --t-kraft: #d9c3a5;
   --t-shadow: rgb(59 47 37 / 0.12);
   --t-shadow-deep: rgb(59 47 37 / 0.25);
-  /* gigi's own story → her own handwriting */
-  --t-font-hand: var(--font-hand);
+  /* the game's own type: Cherry Bomb One */
+  --t-font-hand: 'Cherry Bomb One', var(--font-hand);
   --t-font-display: var(--font-sans);
+  --t-font-eyebrow: var(--t-font-hand);
+  --t-font-gantt: var(--t-font-hand);
+  --t-gantt-size: 1.3125rem;
+  --t-gantt-weight: 400;
+  /* empathy map: Poppins quotes, Cherry Bomb labels */
+  --t-font-quadrant: var(--font-sans);
+  --t-quadrant-w: 330px;
+  --t-quadrant-max: none;
+  --t-font-why: var(--t-font-hand);
+  --t-font-notetag: var(--t-font-hand);
+  --t-font-pill: var(--t-font-hand);
+  --t-pill-weight: 400;
+  --t-font-stats: var(--t-font-hand);
+  --t-stats-weight: 400;
+  --t-counter: none;
 }
 
 [data-case='orbia'] {

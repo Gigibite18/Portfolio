@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom'
-import FrameLabel from '../components/FrameLabel'
 import Tag from '../components/Tag'
 import Button from '../components/Button'
 import Cursor from '../components/Cursor'
@@ -46,10 +45,9 @@ function Featured() {
   const [ref, reveal] = useReveal()
   return (
     <article className={styles.featured} data-frame-host ref={ref} data-reveal={reveal}>
-      <FrameLabel name={FEATURED.frameLabel} selected />
       <div className={styles.featuredCard}>
         <div className={styles.featuredCover}>
-          <DearDiaryCover />
+          <img src={FEATURED.cover.src} alt={FEATURED.cover.alt} width="660" height="480" />
         </div>
         <div className={styles.featuredInfo}>
           <div className={styles.eyebrow}>
@@ -80,6 +78,11 @@ function Featured() {
           </div>
         </div>
       </div>
+      <span className={styles.featuredBadge}>
+        <img src="/art/star-badge.svg" alt="" width="16" height="16" />
+        {FEATURED.badge}
+      </span>
+      <img className={styles.featuredSwift} src="/art/swift-logo.webp" alt="" width="96" height="101" />
     </article>
   )
 }
@@ -90,17 +93,20 @@ function CaseCard({ item }) {
   const { cover } = item
   return (
     <article className={styles.card} data-frame-host ref={ref} data-reveal={reveal}>
-      <FrameLabel name={item.frameLabel} />
       <div className={styles.cover} style={{ '--border': item.border }}>
         <div className={styles.coverClip}>
-          <img
-            src={cover.src}
-            alt={cover.alt}
-            loading="lazy"
-            className={cover.fit ? styles.coverFit : styles.coverFill}
-            style={cover.fit}
-          />
-          {cover.tint && <span className={styles.tint} />}
+          {item.art === 'dear-diary' ? (
+            <DearDiaryCover />
+          ) : (
+            <img
+              src={cover.src}
+              alt={cover.alt}
+              loading="lazy"
+              className={cover.fit ? styles.coverFit : styles.coverFill}
+              style={cover.fit}
+            />
+          )}
+          {cover?.tint && <span className={styles.tint} />}
         </div>
         {item.badge && (
           <span className={styles.badge}>
@@ -139,13 +145,11 @@ export default function Work() {
     <section id="work" className={styles.work} aria-labelledby="work-title">
       <div className={styles.header}>
         <div className={styles.titleBlock}>
-          <FrameLabel name="02 / selected-work" />
           <h2 id="work-title" className={styles.title}>
             Things I&apos;ve designed
           </h2>
           <ScribbleUnderline width={440} height={30} />
         </div>
-        <p className={styles.hint}>Click a frame to open the case study &nbsp;→</p>
       </div>
 
       <Featured />
@@ -163,7 +167,7 @@ export default function Work() {
           aria-disabled={!LINKS.behance || undefined}
           title={LINKS.behance ? undefined : 'Behance link coming soon'}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           More work on Behance ↗
         </Button>

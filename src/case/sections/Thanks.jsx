@@ -3,11 +3,11 @@ import SectionHeader from '../SectionHeader'
 import MediaSlot from '../../components/MediaSlot'
 import styles from './Thanks.module.css'
 
-/** Thanks: dark band with a woven stripe and two polaroids. */
+/** Thanks: dark (or `light`, on t/cover) band with a woven stripe and two polaroids. */
 export default function Thanks({ data, onBack, onNext }) {
   return (
     <Section id={data.id} className={styles.thanks} labelledBy={`${data.id}-title`}>
-      <div className={styles.band}>
+      <div className={styles.band} data-light={data.light || undefined}>
         <span
           className={styles.weave}
           aria-hidden="true"
@@ -18,7 +18,7 @@ export default function Thanks({ data, onBack, onNext }) {
           }}
         />
         <div className={styles.copy}>
-          <SectionHeader eyebrow={data.eyebrow} onDark />
+          <SectionHeader eyebrow={data.eyebrow} onDark={!data.light} />
           <h2 id={`${data.id}-title`} className={styles.title}>
             {data.title.map((l, i) => (
               <span key={i}>{l}</span>

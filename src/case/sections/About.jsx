@@ -41,7 +41,20 @@ export default function About({ data }) {
           </dl>
           {data.artPlaceholder && <MediaSlot label={data.artPlaceholder} round className={styles.artSlot} />}
           {data.art && (
-            <span className={styles.art} role="img" aria-label={data.art.alt}>
+            <span
+              className={styles.art}
+              role="img"
+              aria-label={data.art.alt}
+              style={
+                data.art.box && {
+                  left: data.art.box.x,
+                  top: data.art.box.y,
+                  bottom: 'auto',
+                  width: data.art.box.w,
+                  height: data.art.box.h,
+                }
+              }
+            >
               <img src={data.art.src} alt="" style={data.art.crop} loading="lazy" />
             </span>
           )}

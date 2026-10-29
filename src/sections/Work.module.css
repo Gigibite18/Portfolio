@@ -86,9 +86,9 @@
 
 /* ——— featured ——— */
 .featured {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 .featuredCard {
   position: relative;
@@ -110,6 +110,54 @@
   transform: translateY(-4px);
   border-color: var(--blue);
   box-shadow: var(--shadow-card);
+}
+.featuredCover {
+  overflow: hidden;
+  border: 2px solid var(--dd-yellow);
+  border-radius: 20px;
+  background: var(--surface);
+}
+.featuredCover img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 660 / 480;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out);
+}
+.featured:hover .featuredCover img {
+  transform: scale(1.03);
+}
+/* Figma 372:373 / 372:376 — badge + Swift logo hang off the card corner */
+.featuredBadge {
+  position: absolute;
+  z-index: 3;
+  left: 12px;
+  top: 37px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px 8px 14px;
+  border: 1px solid var(--purple);
+  border-radius: 99px;
+  background: var(--purple-soft);
+  box-shadow: var(--shadow-badge);
+  font-size: var(--fs-label-m);
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.featuredSwift {
+  position: absolute;
+  z-index: 4;
+  left: -51px;
+  top: 39px;
+  width: 96px;
+  height: auto;
+  pointer-events: none;
+  transition: transform 400ms var(--ease-spring);
+}
+.featured:hover .featuredSwift {
+  transform: rotate(-10deg) scale(1.06);
 }
 .featuredInfo {
   display: flex;
@@ -271,6 +319,54 @@
     gap: 28px;
     padding: 16px 16px 28px;
   }
+  .featuredCover {
+    overflow: hidden;
+    border: 2px solid var(--dd-yellow);
+    border-radius: 20px;
+    background: var(--surface);
+  }
+  .featuredCover img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 660 / 480;
+    object-fit: cover;
+    transition: transform 600ms var(--ease-out);
+  }
+  .featured:hover .featuredCover img {
+    transform: scale(1.03);
+  }
+  /* Figma 372:373 / 372:376 — badge + Swift logo hang off the card corner */
+  .featuredBadge {
+    position: absolute;
+    z-index: 3;
+    left: 12px;
+    top: 37px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px 8px 14px;
+    border: 1px solid var(--purple);
+    border-radius: 99px;
+    background: var(--purple-soft);
+    box-shadow: var(--shadow-badge);
+    font-size: var(--fs-label-m);
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .featuredSwift {
+    position: absolute;
+    z-index: 4;
+    left: -51px;
+    top: 39px;
+    width: 96px;
+    height: auto;
+    pointer-events: none;
+    transition: transform 400ms var(--ease-spring);
+  }
+  .featured:hover .featuredSwift {
+    transform: rotate(-10deg) scale(1.06);
+  }
   .featuredInfo {
     padding-inline: 12px;
   }
@@ -284,7 +380,22 @@
     gap: 40px;
   }
 }
+@media (max-width: 1360px) {
+  .featuredSwift {
+    left: -12px;
+    top: -24px;
+    width: 72px;
+  }
+  .featuredBadge {
+    left: 44px;
+    top: 28px;
+  }
+}
 @media (max-width: 480px) {
+  .featuredBadge {
+    font-size: 0.6875rem;
+    padding: 5px 10px;
+  }
   .badge {
     font-size: 0.6875rem;
     padding: 5px 10px;

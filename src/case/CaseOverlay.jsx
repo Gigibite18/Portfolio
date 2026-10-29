@@ -112,9 +112,10 @@ export default function CaseOverlay({ slug }) {
 
   if (!data) {
     return (
-      <div className={styles.overlay} role="dialog" aria-modal="true" aria-label="Case not found" ref={rootRef}>
+      <div className={styles.overlay} role="dialog" aria-modal="true" aria-label="Case not available yet" ref={rootRef}>
         <div className={styles.missing}>
-          <p>This case study isn’t here yet.</p>
+          <p>This case study isn’t available yet.</p>
+          <p className={styles.missingNote}>I’m still putting it together, come back soon ✦</p>
           <button type="button" onClick={close} ref={closeRef} className={styles.pillBtn}>
             ← Back to work
           </button>

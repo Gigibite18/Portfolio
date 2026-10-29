@@ -21,7 +21,11 @@
   /* eyebrow stays in ink (never accent) for contrast */
   color: var(--t-ink);
 }
+.eyebrow {
+  font-family: var(--t-font-eyebrow, var(--font-mono));
+}
 .counter {
+  display: var(--t-counter, inline-flex);
   letter-spacing: 0;
   color: var(--t-ink-soft);
   white-space: pre;
@@ -43,8 +47,13 @@
   letter-spacing: -0.02em;
   color: var(--t-ink);
 }
-.title [data-tone='soft'] {
+.title [data-tone~='soft'] {
   color: var(--t-ink-soft);
+}
+.title [data-tone~='hand'] {
+  font-family: var(--t-font-hand);
+  font-weight: 400;
+  letter-spacing: 0;
 }
 .line {
   display: block;

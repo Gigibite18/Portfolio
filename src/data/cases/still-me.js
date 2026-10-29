@@ -1,5 +1,5 @@
 // Case — Still me (Figma 289:790). Copy is verbatim from the file.
-// "paste: …" = screens that still need to come from the app file → MediaSlot.
+// Synced with the Figma redo on 2026-10-21 (real screens, Cherry Bomb One accents).
 
 const soft = (t) => [t, 'soft']
 
@@ -23,9 +23,11 @@ export default {
     curl: { x: 42, y: 98, r: 0 },
     rays: { x: 1082, y: 122, r: 0 },
     sticker: { text: 'still here', x: 890, y: 315 },
-    note: { lines: ['even with', 'trembling hands,', 'I’m still me'], x: 215, y: 477 },
-    pills: ['iPad · landscape', 'For anyone who ever hid their hands'],
-    screen: { placeholder: 'paste: home screen' },
+    note: { lines: ['even with', 'trembling hands,', 'I’m still me'], x: 234.5, y: 479, tone: 'c1' },
+    screen: {
+      src: '/images/covers/still-me-featured.webp',
+      alt: 'Still me home screen: a dedication to grandma Maridee beside gigi and her grandmother at graduation',
+    },
   },
 
   sections: [
@@ -35,18 +37,26 @@ export default {
       nav: 'About',
       eyebrow: 'ABOUT PROJECT',
       n: 1,
-      lead: 'Still me is an iPad story game that lets you feel essential tremor from the inside.',
+      lead: [
+        ['Still me', 'hand'],
+        ' is an iPad story game that lets you feel ',
+        ['essential tremor', 'hand'],
+        ' from the inside.',
+      ],
       body: 'It is my own childhood with essential tremor. I wrote, designed and coded it alone in SwiftUI for the Swift Student Challenge, and it won.',
-      pills: ['Personal story', 'Storytelling', 'Mini-games', 'Sound', 'Illustration', 'SwiftUI'],
-      byline: 'gigi — story, design and code',
-      panelLabel: 'In numbers',
-      statsAlign: 'left',
+      pills: ['UX research', 'iOS code', 'Wireframes', 'Accessibility', 'Illustration', 'UI design'],
+      role: 'Everything. Research, UX, UI, illustration and the iOS code, made solo.',
       stats: [
         ['3', 'mini-games'],
         ['1', 'bee that keeps flying'],
         ['01', 'Swift Student Challenge win'],
       ],
-      artPlaceholder: 'paste: the bee',
+      art: {
+        src: '/images/still-me/bee.webp',
+        alt: 'The Still me bee, mid-flight',
+        box: { x: 7, y: 238, w: 160, h: 186 },
+        crop: { width: '100%', height: '100%', left: 0, top: 0 },
+      },
     },
     {
       type: 'scope',
@@ -54,21 +64,17 @@ export default {
       nav: 'Scope',
       eyebrow: 'SCOPE OF WORK',
       n: 2,
-      title: [soft('How the work was paced')],
+      title: [soft('How the work was '), ['paced', 'soft hand']],
       columns: [
-        { label: '[Month 1]', x: 98.4 },
-        { label: '[Month 2]', x: 303.2 },
-        { label: '[Month 3]', x: 508 },
-        { label: '[Month 4]', x: 712.8 },
-        { label: '[Month 5]', x: 917.6 },
+        { label: 'December', x: 180 },
+        { label: 'January', x: 509 },
+        { label: 'February', x: 833 },
       ],
-      dividers: [236.8, 441.6, 646.4, 851.2],
+      dividers: [441.6, 717],
       bars: [
-        { label: 'Writing my story', tag: '[x] weeks', x: 32, w: 266.24, tone: 'c1' },
-        { label: 'Mini-game ideas', tag: '[x] weeks', x: 195.84, w: 286.72, tone: 'c2' },
-        { label: 'Scenes & UI', tag: '[x] weeks', x: 359.68, w: 368.64, tone: 'c3' },
-        { label: 'SwiftUI build', tag: '[x] weeks', x: 564.48, w: 327.68, tone: 'c4' },
-        { label: 'Submission', tag: '[x] weeks', x: 769.28, w: 286.72, tone: 'c5' },
+        { label: 'Writing my story and Mini-game ideas', tag: 'Storytelling', x: 103, w: 'auto', tone: 'c1' },
+        { label: 'Scenes & UI and SwiftUI build', tag: 'Drawing', x: 412, w: 'auto', tone: 'accent' },
+        { label: 'Submission', tag: 'Relief', x: 782, w: 'auto', tone: 'c5' },
       ],
     },
     {
@@ -79,6 +85,7 @@ export default {
       n: 3,
       title: 'It looks minor. Inside, it means shame.',
       body: 'My research was my own life: a childhood of trembling hands, and how people reacted to them.',
+      bodyWidth: 860,
       insights: [
         {
           tag: 'INSIGHT 1',
@@ -105,7 +112,6 @@ export default {
           glow: 'c4',
         },
       ],
-      footnote: 'A COLLECTION OF INSIGHTS FROM MY OWN STORY',
     },
     {
       type: 'research',
@@ -113,9 +119,9 @@ export default {
       nav: 'Research',
       eyebrow: 'EMPATHY MAP',
       n: 4,
-      title: [[soft('What I went through')], [soft('& how Still me shows it')]],
-      center: { placeholder: 'paste: little gigi' },
+      title: [[soft('What I went through')], [soft('& how '), ['Still me', 'soft hand'], soft(' shows it')]],
       handSoft: true,
+      center: { src: '/images/still-me/little-gigi.webp', alt: 'Little gigi, drawn as a kid' },
       quadrants: [
         { label: 'Says', tone: 'c1', text: ['“Everyone else could do it.”', '“I should be able to do it.”'] },
         { label: 'Thinks', tone: 'c2', text: ['“Why is it like this with me?”', '“Everyone is judging me.”'] },
@@ -124,22 +130,25 @@ export default {
       ],
       notes: [
         {
-          tag: '/1  Pain point',
+          tag: 'Pain point',
           text: ['Makeup, nails, writing in class: simple things felt like performances under a spotlight.'],
           tone: 'c1',
           rotate: 5,
+          shift: { x: 2, y: -40 },
         },
         {
-          tag: '/2  Promise',
+          tag: 'Promise',
           text: ['Feel the tremor,', 'meet Maridee,', 'leave lighter.'],
           tone: 'band-3',
           rotate: -4,
+          shift: { x: 2, y: -40 },
         },
         {
-          tag: '/3  Real quote',
+          tag: 'Real quote',
           text: ['“I was never broken. I just needed to stop being ashamed of myself.”'],
           tone: 'band-1',
           rotate: 3,
+          shift: { x: 78, y: -6 },
         },
       ],
     },
@@ -154,7 +163,13 @@ export default {
       sticker: 'GIGI, AS A KID',
       stickerPos: { x: 528.8, y: 339.7 },
       callouts: ['SHY', 'CURIOUS', 'TRIES HARD', 'FEELS WATCHED'],
-      art: { placeholder: 'paste: little gigi' },
+      art: {
+        src: '/images/still-me/little-gigi-persona.webp',
+        alt: 'Little gigi looking worried, drawn as a kid in a black T-shirt',
+        // Figma 289:995 — a 260px circle at (170, 110) on the 600×540 sheet
+        box: { left: '28.33%', top: '20.37%', width: '43.33%', height: '48.15%' },
+        crop: { width: '100%', height: '100%', left: 0, top: 0 },
+      },
       radarLabel: 'PERSONALITY · DESIGN INTENT',
       // same shape as the Figma radar; labels per case
       radar: [
@@ -191,14 +206,13 @@ export default {
       eyebrow: 'MAIN FLOW',
       n: 7,
       title: [soft('The eyeliner mini-game, up close')],
-      caption: 'Mini-game — eyeliner   1366 × 1024',
       screen: {
-        src: '/images/still-me/eyeliner.webp',
-        alt: 'Eyeliner mini-game: “Drag to create the eyeliner. Drag slowly.”',
+        src: '/images/still-me/eyeliner-close.webp',
+        alt: 'Eyeliner mini-game up close: a trembling hand draws a wobbly eyeliner line',
       },
-      frame: { x: 244, y: 116, w: 600, h: 419, device: false },
-      selection: { x: 640, y: 262, w: 170, h: 200, tag: 'Eyeliner path' },
-      cursor: { label: 'you', x: 820, y: 380 },
+      frame: { x: 236, y: 76, w: 626, h: 458, device: true },
+      selection: { x: 403, y: 181, w: 170, h: 200, tag: 'Eyeliner path' },
+      cursor: { label: 'you', x: 575, y: 377 },
       pinTone: 'dark',
       comments: [
         {
@@ -213,17 +227,9 @@ export default {
           n: 2,
           title: 'Unsteady lines',
           text: 'The tremor is in every stroke, never exaggerated: present, constant and human.',
-          x: 860,
-          y: 234,
-          pin: { x: 600, y: 240 },
-        },
-        {
-          n: 3,
-          title: 'A bee as the guide',
-          text: 'The bee trembles and still flies. That is the ending: the tremor doesn’t stop the flight.',
-          x: 870,
-          y: 60,
-          pin: { x: 826, y: 150 },
+          x: 716,
+          y: 257,
+          pin: { x: 695, y: 249 },
         },
       ],
     },
@@ -235,42 +241,20 @@ export default {
       n: 8,
       blocks: [
         {
-          kind: 'chat',
+          kind: 'device',
           tone: 'band-1',
-          label: 'FEATURE 01',
-          title: 'Mini-games you play with trembling hands.',
+          title: ['Mini-games you play with ', ['trembling hands.', 'hand']],
           body: 'Eyeliner, nail polish and reading aloud become small challenges where the tremor is always there.',
-          chat: {
-            eyebrow: 'BEFORE YOU START',
-            title: ['Put your iPad', 'on landscape'],
-            me: 'Drag to paint your nails.',
-            them: 'Paint carefully.',
-            input: 'Drag here',
+          screen: {
+            src: '/images/still-me/mini-games.webp',
+            alt: 'Still me scene: little gigi and her friend laughing over burgers, “And for a few minutes… I didn’t care I was trembling.”',
           },
           tags: [
-            { label: 'Eyeliner', tone: 'c1', x: 60, y: 84, r: 6 },
-            { label: 'Nails', tone: 'c2', x: 472, y: 84, r: -5 },
-            { label: 'Reading', tone: 'c3', x: 72, y: 297, r: -4 },
-            { label: 'Friendship', tone: 'c5', x: 470, y: 333, r: 4 },
-            { label: 'Flight', tone: 'c4', x: 90, y: 390, r: 0 },
+            { label: 'Eyeliner', tone: 'c1', x: 57, y: 80, r: 6 },
+            { label: 'Nails', tone: 'c2', x: 470, y: 81, r: -5 },
+            { label: 'Reading', tone: 'c3', x: 70, y: 294, r: -4 },
+            { label: 'Friendship', tone: 'c5', x: 468, y: 330, r: 4 },
           ],
-        },
-        {
-          kind: 'toggle',
-          tone: 'band-3',
-          flip: true,
-          label: 'FEATURE 02',
-          title: 'A story that turns around.',
-          body: 'Halfway through, Maridee steps in. She doesn’t try to fix me, she helps me.',
-          toggle: {
-            label: 'What Maridee took away',
-            items: [
-              { label: 'pity', x: 640, y: 202, r: 3 },
-              { label: 'staring', x: 762, y: 251, r: -4 },
-              { label: 'shame', x: 620, y: 330, r: 2 },
-            ],
-            note: 'for vózinha ♡',
-          },
         },
       ],
     },
@@ -309,18 +293,15 @@ export default {
       nav: 'Results',
       eyebrow: 'RESULTS',
       n: 10,
-      title: ['What happened next'],
-      rows: [
-        { label: 'AWARD', big: 'Winner', small: 'Swift Student Challenge 2026', tone: 'c5' },
-        { label: 'PLAYTESTS', big: 'Next', small: 'test it with people who live with tremor', tone: 'c1' },
-      ],
+      winner: { big: 'Winner', small: 'Swift Student Challenge 2026' },
+      photo: {
+        src: '/images/still-me/winner.webp',
+        alt: 'gigi holding a laptop that shows the Swift Student Challenge winner screen',
+        crop: { width: '120.22%', height: '232.79%', left: '-20.22%', top: '-114.66%' },
+      },
       quote: {
         text: '“Even with trembling hands, I’m still here. I’m still capable. I’m still me.”',
-        who: 'gigi',
-        where: 'from my submission',
-        avatarSlot: 'paste: ending scene',
       },
-      flower: { n: '1', label: 'personal story, told out loud', tone: 'c4' },
     },
     {
       type: 'thanks',
@@ -328,20 +309,23 @@ export default {
       eyebrow: 'THE END',
       title: ['Thanks for', 'reading.'],
       body: 'Thank you, vózinha Maridee, for never letting me forget who I am.',
-      weave: { base: 'c5', v: 'c3', h: 'c1' },
+      light: true,
+      weave: { base: 'ink', v: 'ink', h: 'c1' },
       polaroids: [
         {
-          src: '/images/still-me/credits.webp',
-          alt: 'Credits screen dedicated to grandma Maridee',
-          caption: 'for vózinha Maridee ♡',
-          rotate: -8,
+          src: '/images/still-me/friendship.webp',
+          alt: 'Illustration of two hands holding each other',
+          caption: 'she held my hands with love',
+          rotate: 7,
+          crop: { width: '133.4%', height: '100%', left: '-8.21%', top: '0.06%' },
         },
-        { placeholder: 'paste: friendship scene', caption: 'she held my hands with love', rotate: 7 },
-      ],
-      credits: [
-        ['THIS PROJECT WAS MADE FOR', 'Swift Student Challenge 2026'],
-        ['STORY, DESIGN & CODE', 'gigi — Giovana Hossein Rebello'],
-        ['DEDICATED TO', 'Maridee, my vózinha ♡'],
+        {
+          src: '/images/covers/still-me-featured.webp',
+          alt: 'gigi and her grandma Maridee at graduation',
+          caption: 'for vózinha Maridee',
+          rotate: -8,
+          crop: { width: '238.28%', height: '182.2%', left: '-129.28%', top: '-22.69%' },
+        },
       ],
     },
   ],

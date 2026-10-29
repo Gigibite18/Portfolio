@@ -58,10 +58,11 @@
   padding-top: 80px;
 }
 .pill {
+  font-family: var(--t-font-pill, inherit);
   padding: 9px 18px;
   border-radius: 99px;
   font-size: var(--fs-label-m);
-  font-weight: 500;
+  font-weight: var(--t-pill-weight, 500);
   color: var(--t-ink);
   transition: transform 300ms var(--ease-spring);
 }
@@ -83,9 +84,9 @@
 .hand {
   display: flex;
   flex-direction: column;
-  width: 230px;
-  max-width: 100%;
-  font-family: var(--t-font-hand);
+  width: var(--t-quadrant-w, 230px);
+  max-width: var(--t-quadrant-max, 100%);
+  font-family: var(--t-font-quadrant, var(--t-font-hand));
   font-size: 1.125rem;
   line-height: 1.2;
   color: var(--t-ink);
@@ -193,7 +194,7 @@
   translate: -50% 0;
 }
 .noteTag {
-  font-family: var(--font-mono);
+  font-family: var(--t-font-notetag, var(--font-mono));
   font-size: var(--fs-mono-s);
   font-weight: 500;
   white-space: pre;

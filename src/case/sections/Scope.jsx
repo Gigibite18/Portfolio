@@ -27,7 +27,8 @@ export default function Scope({ data }) {
               className={styles.bar}
               style={{
                 '--x': `${(b.x / W) * 100}%`,
-                '--w': `${(b.w / W) * 100}%`,
+                // w: 'auto' hugs the label + tag, like Figma's hug-contents bars
+                '--w': b.w === 'auto' ? 'fit-content' : `${(b.w / W) * 100}%`,
                 '--i': i,
               }}
             >

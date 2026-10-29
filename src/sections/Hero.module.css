@@ -52,10 +52,6 @@
   min-width: 0;
 }
 
-.frameLabel {
-  display: flex;
-}
-
 /* ——— title ——— */
 .titleWrap {
   position: relative;
@@ -147,18 +143,6 @@
 }
 
 /* decorations live in em so they scale with the title */
-.pill {
-  position: absolute;
-  left: 4.4em;
-  top: 1.217em;
-  width: 1.3em;
-  min-height: 0;
-  height: 0.767em;
-  font-size: 1em;
-}
-.pill figcaption {
-  font-size: 0.217em;
-}
 .star {
   position: absolute;
   left: -0.52em;
@@ -239,22 +223,22 @@
   left: 456px;
   top: 256px;
 }
+/* Figma 377:438 — sits where the photo pill used to be */
 .avatar {
   position: absolute;
-  z-index: 3;
-  left: 302px;
-  top: 510px;
-  width: 211px;
+  z-index: 2;
+  left: 4.47em;
+  top: 0.797em;
+  width: 1.2235em;
   height: auto;
-  transform: rotate(10.84deg);
-  transition: transform 400ms var(--ease-spring);
+  rotate: -10.1deg;
+  transition:
+    rotate 400ms var(--ease-spring),
+    translate 400ms var(--ease-spring);
 }
-.avatar {
-  /* the drawing overlaps the card corner — never block the toggles */
-  pointer-events: none;
-}
-.side:hover .avatar {
-  transform: rotate(4deg) translateY(-4px);
+.titleWrap:hover .avatar {
+  rotate: -2deg;
+  translate: 0 -4px;
 }
 
 .scroll {
@@ -336,22 +320,9 @@
     left: -40px;
     top: 300px;
   }
-  .avatar {
-    left: auto;
-    right: -90px;
-    top: auto;
-    bottom: -150px;
-    width: 170px;
-  }
-  .hero {
-    padding-bottom: 180px;
-  }
 }
 
 @media (max-width: 640px) {
-  .hero {
-    padding-bottom: 150px;
-  }
   .topbar {
     margin-inline: 0;
   }
@@ -369,7 +340,7 @@
   .titleWrap {
     margin-top: 48px;
   }
-  .pill,
+  .avatar,
   .youCursor,
   .scroll {
     display: none;
@@ -396,10 +367,5 @@
   }
   .heart {
     right: -8px;
-  }
-  .avatar {
-    right: -16px;
-    bottom: -140px;
-    width: 140px;
   }
 }

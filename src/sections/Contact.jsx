@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import FrameLabel from '../components/FrameLabel'
 import Cursor from '../components/Cursor'
 import { EMAIL, LINKS } from '../data/links'
 import styles from './Contact.module.css'
@@ -27,7 +26,6 @@ export default function Contact() {
 
   return (
     <footer id="contact" className={styles.contact} aria-labelledby="contact-title">
-      <FrameLabel name="05 / say-hi" />
       <h2 id="contact-title" className={styles.headline}>
         <span>Let&apos;s make something</span>
         <span className={styles.line2}>
@@ -75,7 +73,7 @@ export default function Contact() {
         {SOCIAL.map((s) => (
           <li key={s.key}>
             {LINKS[s.key] ? (
-              <a className={styles.pill} href={LINKS[s.key]} target="_blank" rel="noreferrer">
+              <a className={styles.pill} href={LINKS[s.key]} target="_blank" rel="noopener noreferrer">
                 {s.label}
               </a>
             ) : (

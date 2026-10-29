@@ -1,5 +1,6 @@
+import { useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import FrameLabel from '../components/FrameLabel'
+import { DraggableSticker } from '../components/Sticker'
 import ScribbleUnderline from '../components/ScribbleUnderline'
 import AwardSeal from '../components/AwardSeal'
 import styles from './Awards.module.css'
@@ -23,11 +24,12 @@ const AWARDS = [
 
 export default function Awards() {
   const location = useLocation()
+  const boardRef = useRef(null)
   return (
     <section className={styles.awards} aria-labelledby="awards-title">
-      <div className={styles.board}>
+      <div className={styles.board} ref={boardRef}>
+        <DraggableSticker name="crown" bounds={boardRef} className={styles.crown} />
         <div className={styles.titleBlock}>
-          <FrameLabel name="03 / awards" />
           <h2 id="awards-title" className={styles.title}>
             Some shiny things
           </h2>
@@ -44,11 +46,11 @@ export default function Awards() {
               <Link to={`/work/${a.slug}`} state={{ background: location }} className={styles.link}>
                 See project ↗<span className="visually-hidden">: {a.name}</span>
               </Link>
-              {a.tone === 'blue' && <AwardSeal glyph="✦" rotate={-6} className={styles.sealRight} />}
+              {a.tone === 'blue' && <AwardSeal rotate={-6} className={styles.sealRight} />}
             </li>
           ))}
         </ul>
-        <AwardSeal glyph="★" rotate={8} className={styles.sealLeft} />
+        <AwardSeal rotate={8} className={styles.sealLeft} />
       </div>
     </section>
   )

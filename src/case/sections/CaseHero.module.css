@@ -51,7 +51,7 @@
   margin: 0;
 }
 .meta dt {
-  font-family: var(--font-mono);
+  font-family: var(--t-font-eyebrow, var(--font-mono));
   font-size: max(10px, 0.94cqw);
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -73,6 +73,11 @@
   letter-spacing: -0.06em;
   white-space: nowrap;
   color: var(--t-ink);
+}
+/* Dear Diary's wordmark is set in the app's own Patrick Hand */
+.word[data-font='hand'] {
+  font-family: var(--t-font-hand);
+  font-weight: 400;
 }
 
 .curl,

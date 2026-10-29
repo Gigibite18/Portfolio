@@ -82,7 +82,7 @@ export default function Persona({ data }) {
           </svg>
           <span className={styles.halo} aria-hidden="true" />
           {data.art.src ? (
-            <span className={styles.art} role="img" aria-label={data.art.alt}>
+            <span className={styles.art} role="img" aria-label={data.art.alt} style={data.art.box}>
               <img src={data.art.src} alt="" style={data.art.crop} loading="lazy" />
             </span>
           ) : (

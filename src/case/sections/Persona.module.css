@@ -158,7 +158,7 @@
   background: var(--t-paper);
 }
 .whyLabel {
-  font-family: var(--font-mono);
+  font-family: var(--t-font-why, var(--font-mono));
   font-size: var(--fs-mono-s);
   font-weight: 500;
   color: var(--t-ink-soft);

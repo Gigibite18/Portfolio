@@ -9,6 +9,7 @@ const BARS = 68
 /** Results: big statements with barcode rules, a quote and a flower stat.
  *  Only facts that exist — never invented numbers. */
 export default function Results({ data }) {
+  if (data.winner) return <WinnerResults data={data} />
   return (
     <Section id={data.id} className={styles.results} labelledBy={`${data.id}-title`}>
       <SectionHeader eyebrow={data.eyebrow} n={data.n} title={data.title} titleId={`${data.id}-title`} />
@@ -62,6 +63,29 @@ export default function Results({ data }) {
             </div>
           )}
         </div>
+      </div>
+    </Section>
+  )
+}
+
+/** Results as a win (Still me, Figma 289:1240): big "Winner", the photo in a
+ *  tilted iPad, and the quote in the game's own type. */
+function WinnerResults({ data }) {
+  const { winner, photo, quote } = data
+  return (
+    <Section id={data.id} className={styles.results} labelledBy={`${data.id}-title`}>
+      <SectionHeader eyebrow={data.eyebrow} n={data.n} />
+      <h2 id={`${data.id}-title`} className={styles.winner}>
+        <span className={styles.winnerBig}>{winner.big}</span>
+        <span className={styles.winnerSmall}>{winner.small}</span>
+      </h2>
+      <div className={styles.winnerGrid}>
+        <div className={styles.winnerDevice}>
+          <span className={styles.winnerScreen}>
+            <img src={photo.src} alt={photo.alt} style={photo.crop} loading="lazy" />
+          </span>
+        </div>
+        <blockquote className={styles.winnerQuote}>{quote.text}</blockquote>
       </div>
     </Section>
   )

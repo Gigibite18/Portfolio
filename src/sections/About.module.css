@@ -78,11 +78,10 @@
 }
 .avatar {
   position: absolute;
-  left: 188px;
-  top: 190px;
-  width: 159px;
+  left: 236px;
+  top: 154px;
+  width: 170px;
   height: auto;
-  transform: rotate(10.84deg);
   transition: transform 400ms var(--ease-spring);
 }
 .portrait:hover .avatar {
@@ -124,11 +123,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 286px;
+  height: 303px;
   padding: 16px 16px 18px;
   overflow: hidden;
+  border: 6px solid var(--dd-blue);
   border-radius: 20px;
-  background: var(--dd-kraft);
+  background: var(--dd-bg-blue);
 }
 .photos {
   position: absolute;
@@ -156,6 +156,20 @@
 .hobby:hover .front {
   transform: rotate(12deg) translate(10px, -6px);
 }
+.halo {
+  position: absolute;
+  z-index: 2;
+  left: 64.5%;
+  top: 24px;
+  width: 56px;
+  height: auto;
+  rotate: -13.61deg;
+  pointer-events: none;
+  transition: translate 400ms var(--ease-spring);
+}
+.hobby:hover .halo {
+  translate: 6px -10px;
+}
 .hobbyText {
   position: relative;
   display: flex;
@@ -171,8 +185,7 @@
 .hobbyBody {
   font-size: var(--fs-label-s);
   line-height: 1.4;
-  /* ink-muted on kraft is only 3.4:1 → an ink/kraft mix keeps AA */
-  color: color-mix(in srgb, var(--ink) 70%, var(--dd-kraft));
+  color: var(--ink-muted-strong);
 }
 
 .cta {

@@ -16,9 +16,11 @@ export default function KeyScreen({ data }) {
       <SectionHeader eyebrow={data.eyebrow} n={data.n} title={data.title} titleId={`${data.id}-title`} />
       <figure className={styles.canvas}>
         <div className={styles.stage}>
-          <p className={styles.caption} style={{ left: u(f.x), top: u(f.y - (f.device ? 29 : 20)) }}>
-            {data.caption}
-          </p>
+          {data.caption && (
+            <p className={styles.caption} style={{ left: u(f.x), top: u(f.y - (f.device ? 29 : 20)) }}>
+              {data.caption}
+            </p>
+          )}
           <div
             className={styles.frame}
             data-device={f.device || undefined}

@@ -35,9 +35,6 @@
   width: 44%;
   pointer-events: none;
 }
-.label {
-  color: var(--ink-muted-strong);
-}
 .title {
   margin-top: 8px;
   font-size: min(var(--fs-display-l), 6cqw);
@@ -60,25 +57,43 @@
   color: var(--ink-muted-strong);
 }
 
-/* ——— hand-made slots ——— */
-.slotItem {
+/* ——— art cards ——— */
+.artItem {
   position: absolute;
+  z-index: 1;
   width: var(--a);
   translate: -50% -50%;
+  pointer-events: none;
 }
-.slot {
+.artItem[data-draggable] {
+  pointer-events: auto;
+}
+.artCard {
+  position: relative;
+  display: block;
   width: 100%;
-  background: transparent;
-  backdrop-filter: none;
+  aspect-ratio: 1;
+  /* just the cut-out drawing: no card surface behind it */
+  background: none;
+  filter: var(--shadow-sticker);
+  cursor: grab;
+  touch-action: none;
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg));
+  transition: transform 260ms var(--ease-spring);
 }
-.slot span {
-  font-size: max(22px, 3.33cqw);
+.artCard img {
+  position: absolute;
+  max-width: none;
+  pointer-events: none;
 }
-.slot figcaption {
-  font-size: max(15px, 2.17cqw);
+.artCard:hover {
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(0deg) scale(1.03);
 }
-.slotItem:hover .slot {
-  transform: rotate(0deg) scale(1.03);
+.artCard[data-dragging] {
+  z-index: 20;
+  cursor: grabbing;
+  transition: none;
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(calc(var(--r, 0deg) + 4deg)) scale(1.06);
 }
 
 /* ——— drawing / stamps / stickers ——— */
@@ -160,6 +175,10 @@
   color: var(--ink);
   transition: background-color var(--dur-fast);
 }
+.hand {
+  font-family: var(--font-hand);
+  font-weight: 400;
+}
 .tool:hover {
   background: var(--canvas);
 }
@@ -189,26 +208,20 @@
   .scribble {
     width: min(300px, 70%);
   }
-  .slots {
+  .arts {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
-  .slotItem {
+  .artItem {
     position: static;
     width: auto;
     translate: none;
   }
-  .slotItem:first-child {
+  .artItem:first-child {
     grid-column: span 2;
     justify-self: center;
     width: min(100%, 300px);
-  }
-  .slot figcaption {
-    font-size: 1.125rem;
-  }
-  .slot span {
-    font-size: 1.75rem;
   }
   .cursor {
     display: none;

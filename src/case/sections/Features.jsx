@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Section from './Section'
 import SectionHeader from '../SectionHeader'
+import TwoTone from '../TwoTone'
 import MediaSlot from '../../components/MediaSlot'
 import styles from './Features.module.css'
 
@@ -105,14 +106,14 @@ export default function Features({ data }) {
       {data.blocks.map((b, i) => {
         const Visual = VISUALS[b.kind]
         return (
-          <div key={b.title} className={styles.band} data-tone={b.tone} data-flip={b.flip || undefined}>
+          <div key={i} className={styles.band} data-tone={b.tone} data-flip={b.flip || undefined}>
             <div className={styles.visual}>
               <Visual block={{ ...b, id: `${data.id}-${i}` }} />
             </div>
             <div className={styles.copy}>
-              <p className={styles.label}>{b.label}</p>
+              {b.label && <p className={styles.label}>{b.label}</p>}
               <h2 id={`${data.id}-title-${i}`} className={styles.title}>
-                {b.title}
+                {Array.isArray(b.title) ? <TwoTone parts={b.title} /> : b.title}
               </h2>
               <p className={styles.body}>{b.body}</p>
             </div>

@@ -67,6 +67,16 @@
   background: var(--t-accent-btn, var(--t-accent));
   color: var(--t-on-dark);
 }
+/* Still me: the band sits on the warm t/cover yellow */
+.band[data-light] {
+  background: var(--t-cover);
+  color: var(--t-ink);
+}
+.band[data-light] .next {
+  background: var(--t-c1);
+  /* Figma sets on-dark here; ink keeps the label readable on honey */
+  color: var(--t-ink);
+}
 
 .photos {
   position: relative;

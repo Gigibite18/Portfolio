@@ -19,6 +19,7 @@
   --coral: #f27c6e;
   --yellow: #ffc83d;
   --pink: #ff8cc6;
+  --sm-bg: #f8f4ec; /* sm/bg — Still me featured cover */
 
   /* Raw fills used in Figma without a variable yet (Toolbox "drawing" tags).
      Kept here as tokens so components stay hex-free. */
@@ -43,11 +44,13 @@
   --dd-cream: #fdf8ee;
   --dd-kraft: #e3d3b8;
   --dd-blue: #a9c3dc;
+  --dd-bg-blue: #e0ebf2;
   --dd-yellow: #f0c46a;
   --dd-sub-ink: #746358;
 
   /* — elevation — */
   --shadow-sticker: drop-shadow(0 4px 5px rgb(0 0 0 / 0.14));
+  --shadow-art: drop-shadow(0 6px 8px rgb(0 0 0 / 0.06));
   --shadow-toolbar: 0 4px 16px rgb(20 20 26 / 0.06);
   --shadow-card: 0 12px 40px rgb(20 20 26 / 0.08);
   --shadow-panel: 0 8px 28px rgb(20 20 26 / 0.06);
@@ -59,8 +62,9 @@
   --shadow-photo: 0 16px 30px rgb(0 0 0 / 0.3);
 
   /* — type families — */
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Figma Mono/S is Poppins Medium now; kept as its own token for labels */
+  --font-mono: 'Poppins', system-ui, sans-serif;
   --font-hand: 'Gigi Hand 2', 'Caveat', cursive;
 
   /* — fluid type scale (375 → 1440) — */

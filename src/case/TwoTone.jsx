@@ -1,4 +1,5 @@
-/** Renders title segments: 'text' in t/ink, ['text', 'soft'] in t/ink-soft. */
+/** Renders title segments: 'text' in t/ink, ['text', 'soft'] in t/ink-soft,
+ *  ['text', 'hand'] in the case's own type (t/font-hand); 'soft hand' combines both. */
 export default function TwoTone({ parts }) {
   return parts.map((p, i) =>
     Array.isArray(p) ? (

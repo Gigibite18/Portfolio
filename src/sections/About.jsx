@@ -1,4 +1,3 @@
-import FrameLabel from '../components/FrameLabel'
 import Tag from '../components/Tag'
 import Button from '../components/Button'
 import Polaroid from '../components/Polaroid'
@@ -16,6 +15,9 @@ function Hobby({ hobby }) {
       <div className={styles.photos}>
         <Polaroid {...hobby.front} size="s" rotate={8.31} className={styles.front} />
         <Polaroid {...hobby.back} size="s" rotate={-4} className={styles.back} />
+        {hobby.halo && (
+          <img className={styles.halo} src="/art/crayon/sticker-aureola.webp" alt="" width="56" height="39" />
+        )}
       </div>
       <div className={styles.hobbyText}>
         <h4 className={styles.hobbyTitle}>{hobby.title}</h4>
@@ -34,7 +36,6 @@ export default function About() {
         </div>
 
         <div className={styles.bio}>
-          <FrameLabel name="04 / about-me" />
           <div className={styles.titleRow}>
             <h2 id="about-title" className={styles.title}>
               Hi, I&apos;m gigi
@@ -65,8 +66,8 @@ export default function About() {
                 className={styles.avatar}
                 src="/art/gigi-avatar-about.svg"
                 alt="Illustrated self-portrait of gigi"
-                width="159"
-                height="150"
+                width="170"
+                height="176"
               />
             </div>
           </div>
@@ -79,9 +80,9 @@ export default function About() {
                   <Tag>{t}</Tag>
                 </li>
               ))}
-              {TOOLBOX.draw.map((t) => (
+              {TOOLBOX.more.map((t) => (
                 <li key={t}>
-                  <Tag variant="draw">{t}</Tag>
+                  <Tag>{t}</Tag>
                 </li>
               ))}
             </ul>
@@ -90,7 +91,7 @@ export default function About() {
       </div>
 
       <div className={styles.offscreen} id="off-screen">
-        <h3 className={styles.small}>Off-screen</h3>
+        <h3 className="visually-hidden">Off-screen</h3>
         <ul className={styles.hobbies}>
           {HOBBIES.map((h) => (
             <Hobby key={h.title} hobby={h} />

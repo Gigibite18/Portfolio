@@ -1,15 +1,16 @@
 // About copy — verbatim from Figma 04 About (131:97).
-// Layer `icon`: '#' frame, '▢' item, '★' / '✦' award glyphs.
+// Layer `icon`: '★' / '✦' glyphs before each item.
 
 export const LAYERS = [
   {
     id: 'experience',
     name: 'Experience',
-    meta: '3 yrs',
+    meta: '2 yrs',
     open: true,
     children: [
-      { id: 'procergs', name: 'UX/UI Designer — PROCERGS', meta: '2025 – now', icon: '▢' },
-      { id: 'academy', name: 'UX/UI Designer — Apple Developer Academy - PUCRS', meta: '2025 – now', icon: '▢' },
+      { id: 'academy', name: 'UX/UI Designer — Apple Developer Academy (POA)', meta: '2025 – 2026', icon: '★' },
+      { id: 'adp', name: 'UX Designer — ADP', meta: '2026 – now', icon: '★' },
+      { id: 'procergs', name: 'UX/UI Designer — PROCERGS', meta: '2025 – 2026', icon: '★' },
     ],
   },
   {
@@ -17,49 +18,34 @@ export const LAYERS = [
     name: 'Education',
     open: true,
     children: [
-      { id: 'uniritter', name: 'Holds a degree in Graphic Design — Uniritter', meta: '2025', icon: '▢' },
-      { id: 'cruzeiro', name: 'Studying User Experience — Cruzeiro do Sul', meta: '2025', icon: '▢' },
+      { id: 'uniritter', name: 'Holds a degree in Graphic Design — Uniritter', meta: '2025', icon: '★' },
+      { id: 'cruzeiro', name: 'Studying User Experience — Cruzeiro do Sul', meta: '2025', icon: '★' },
     ],
   },
   {
     id: 'awards',
-    name: 'Awards 🏆',
-    meta: '2',
+    name: 'Awards',
     open: true,
     children: [
       { id: 'ssc', name: 'Swift Student Challenge', meta: '2026', icon: '★' },
       { id: 'campus', name: 'Campus Mobile', meta: '2026', icon: '✦' },
-      // TODO(gigi): confirm — layer reads "GOIASSSAS" in Figma (awards count says 2)
-      { id: 'goiasssas', name: 'GOIASSSAS', meta: '2026', icon: '✦' },
+      { id: 'cei-ufg', name: 'CEI UFG', meta: '2026', icon: '✦' },
     ],
-  },
-  {
-    id: 'certificates',
-    name: 'Certificates',
-    meta: 'click to expand',
-    open: false,
-    children: [{ id: 'cert-pending', name: '[certificates — to be added]', icon: '▢', pending: true }],
-  },
-  {
-    id: 'funfacts',
-    name: 'Fun facts',
-    meta: '4 · see Off-screen',
-    open: false,
-    children: [{ id: 'offscreen-link', name: 'Off-screen ↓', icon: '↳', href: '#off-screen' }],
   },
 ]
 
 export const BIO = {
   lead: "I'm a Product Designer from Brazil 🇧🇷 with 3 years of experience in UX/UI. I love the messy middle of a project, interviews, flows, endless iterations and the moment it all clicks into something simple.",
   body: [
-    'Lately I design (and sometimes code) iOS and iPadOS apps for kids and families, like Dear Diary, Fonfon and Lumina, with accessibility at the heart. Now I’m looking for my next UX/UI role.',
+    'Lately I design (and sometimes code) apps for kids and families, like Dear Diary, Fonfon and Lumina, with accessibility at the heart. Now I’m looking for my next UX/UI role.',
     "When I'm not in Figma, I'm drawing, which is how this site got its stickers.",
   ],
 }
 
 export const TOOLBOX = {
   design: ['Figma', 'FigJam', 'Prototyping', 'User research', 'Usability testing', 'Design systems'],
-  draw: ['Procreate', 'Illustrator', 'Swift'],
+  // Figma 131:174 shows these as plain outline tags too (Figma spells "Diversisty"/"Acessibility")
+  more: ['Procreate', 'Illustrator', 'Swift', 'Diversity', 'Accessibility'],
 }
 
 // Off-screen hobbies. `back` is the left (−4°) polaroid drawn on top, `front` the right one (8.31°).
@@ -104,6 +90,7 @@ export const HOBBIES = [
   {
     title: '2 cats and 2 dogs (Jade is an angel now)',
     text: 'Proud pet mom.',
+    halo: true, // crayon halo over Jade (Figma 459:468)
     back: {
       src: '/images/about/joaquim-joaquina.webp',
       alt: 'Two cats, Joaquim and Joaquina, curled up together',

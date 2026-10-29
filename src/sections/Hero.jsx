@@ -1,9 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import FrameLabel from '../components/FrameLabel'
 import Tag from '../components/Tag'
 import Button from '../components/Button'
 import Cursor from '../components/Cursor'
-import HandSlot from '../components/HandSlot'
 import { DraggableSticker, Sticker } from '../components/Sticker'
 import ProfileCard from './ProfileCard'
 import styles from './Hero.module.css'
@@ -68,8 +66,6 @@ export default function Hero() {
 
       <div className={styles.grid}>
         <div className={styles.intro}>
-          <FrameLabel name="Product Designer, 3 yrs of experience" className={styles.frameLabel} as="p" />
-
           <div className={styles.titleWrap}>
             <h1 className={styles.title}>
               <span className={styles.line}>
@@ -90,7 +86,13 @@ export default function Hero() {
                 who <span className={styles.draws}>draws.</span>
               </span>
             </h1>
-            <HandSlot label="photo pill" shape="pill" rotate={4} className={styles.pill} />
+            <img
+              className={styles.avatar}
+              src="/art/gigi-avatar-hero.svg"
+              alt="Illustrated self-portrait of gigi with long wavy hair and white glasses"
+              width="147"
+              height="155"
+            />
             <DraggableSticker name="star" rotate={-4} scale={1.14} bounds={heroRef} className={styles.star} />
             <DraggableSticker name="sparkle" bounds={heroRef} className={styles.sparkle} />
           </div>
@@ -117,13 +119,6 @@ export default function Hero() {
           </div>
           <DraggableSticker name="heart" rotate={-12} scale={1.07} bounds={heroRef} className={styles.heart} />
           <DraggableSticker name="flower" rotate={14} scale={1.13} bounds={heroRef} className={styles.flower} />
-          <img
-            className={styles.avatar}
-            src="/art/gigi-avatar-hero.svg"
-            alt="Illustrated self-portrait of gigi with dark red curly hair and glasses"
-            width="211"
-            height="199"
-          />
         </div>
       </div>
 

@@ -7,24 +7,17 @@
   transform: rotate(var(--r, 0deg));
   transition: transform 500ms var(--ease-spring);
 }
-.ribbons,
-.disc {
+/* Figma: the crayon art sits 7.29% in from each side, 4px from the top */
+.art {
   position: absolute;
-  inset: 0 auto auto 0;
-}
-.glyph {
-  position: absolute;
-  left: 50%;
-  top: 29px;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--ink);
+  left: 7.29%;
+  top: 4px;
+  width: 85.42%;
+  height: auto;
 }
 .shine {
   position: absolute;
-  inset: 0 0 12px;
+  inset: 0 0 24px;
   border-radius: 50%;
   overflow: hidden;
   -webkit-mask: radial-gradient(circle at 50% 44%, var(--ink) 46%, transparent 47%);

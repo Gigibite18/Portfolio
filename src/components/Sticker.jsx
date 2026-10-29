@@ -2,12 +2,18 @@ import { forwardRef } from 'react'
 import { useDraggable } from '../hooks/useDraggable'
 import styles from './Sticker.module.css'
 
-// intrinsic sizes of the exported SVGs (Figma: Sticker/*)
+// crayon art cut from the Figma sprites (Sticker/* + section "Ilustrações" 455:369);
+// w/h are the Figma layer sizes
 export const STICKERS = {
-  star: { src: '/art/sticker-star.svg', w: 62, h: 60, alt: 'yellow star sticker' },
-  heart: { src: '/art/sticker-heart.svg', w: 68, h: 62, alt: 'coral heart sticker' },
-  sparkle: { src: '/art/sticker-sparkle.svg', w: 62, h: 62, alt: 'blue sparkle sticker' },
-  flower: { src: '/art/sticker-flower.svg', w: 60, h: 61, alt: 'pink flower sticker' },
+  star: { src: '/art/crayon/sticker-star.webp', w: 60, h: 49, alt: 'yellow crayon star sticker' },
+  heart: { src: '/art/crayon/sticker-heart.webp', w: 64, h: 52, alt: 'red crayon heart sticker' },
+  sparkle: { src: '/art/crayon/sticker-sparkle.webp', w: 56, h: 46, alt: 'blue crayon sparkle sticker' },
+  flower: { src: '/art/crayon/sticker-flower.webp', w: 60, h: 49, alt: 'pink crayon flower sticker' },
+  crown: { src: '/art/crayon/sticker-coroa.webp', w: 75, h: 74, alt: 'coral crayon crown sticker' },
+  bee: { src: '/art/crayon/sticker-abelha.webp', w: 70, h: 77, alt: 'crayon bee sticker' },
+  ladybug: { src: '/art/crayon/sticker-joaninha.webp', w: 60, h: 58, alt: 'crayon ladybug sticker' },
+  butterfly: { src: '/art/crayon/sticker-borboleta.webp', w: 72, h: 66, alt: 'lilac crayon butterfly sticker' },
+  mushroom: { src: '/art/crayon/sticker-cogumelo.webp', w: 56, h: 67, alt: 'crayon mushroom sticker' },
 }
 
 /** Static sticker art with a wiggle on hover. */

@@ -1,6 +1,76 @@
 .results {
   padding: 32px 56px 48px;
 }
+/* ——— winner variant ——— */
+.winner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-top: 4px;
+}
+.winnerBig {
+  font-family: var(--t-font-hand);
+  font-size: clamp(3.5rem, 2.4rem + 3vw, 5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  color: var(--t-ink);
+}
+.winnerSmall {
+  font-weight: 500;
+  color: var(--t-ink);
+}
+.winnerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 516px) minmax(0, 500px);
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-top: 24px;
+}
+.winnerDevice {
+  position: relative;
+  width: min(478px, 92%);
+  aspect-ratio: 478.5 / 350.8;
+  margin: 26px auto;
+  overflow: hidden;
+  border-radius: 34px;
+  background: var(--t-dark);
+  box-shadow: 0 30px 60px var(--t-shadow-deep);
+  rotate: -6.71deg;
+  transition: rotate 600ms var(--ease-spring);
+}
+.winnerDevice:hover {
+  rotate: -2deg;
+}
+.winnerScreen {
+  position: absolute;
+  left: 3.13%;
+  top: 7.07%;
+  width: 93.07%;
+  height: 87.49%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.winnerScreen img {
+  position: absolute;
+  max-width: none;
+}
+.winnerQuote {
+  margin: 0;
+  font-family: var(--t-font-hand);
+  font-size: clamp(1.375rem, 1rem + 1vw, 1.875rem);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--t-ink-soft);
+}
+@media (max-width: 860px) {
+  .winnerGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 560px) minmax(0, 500px);

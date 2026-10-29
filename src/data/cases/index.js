@@ -3,7 +3,7 @@ import stillMe from './still-me'
 import orbia from './orbia'
 import fonfon from './fonfon'
 import lumina from './lumina'
-import { CASE_ORDER } from '../projects'
+import { AVAILABLE, CASE_ORDER } from '../projects'
 
 // one data file per case; overlay renders whatever is registered here
 export const CASES = {
@@ -15,12 +15,12 @@ export const CASES = {
 }
 
 export function getCase(slug) {
-  return CASES[slug] ?? null
+  return AVAILABLE.includes(slug) ? (CASES[slug] ?? null) : null
 }
 
 /** Next registered case in the home order (wraps around). */
 export function getNextSlug(slug) {
-  const order = CASE_ORDER.filter((s) => CASES[s])
+  const order = CASE_ORDER.filter((s) => CASES[s] && AVAILABLE.includes(s))
   const i = order.indexOf(slug)
   return order[(i + 1) % order.length]
 }

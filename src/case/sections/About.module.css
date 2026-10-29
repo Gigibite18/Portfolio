@@ -24,8 +24,13 @@
   letter-spacing: -0.02em;
   color: var(--t-ink);
 }
-.lead [data-tone='soft'] {
+.lead [data-tone~='soft'] {
   color: var(--t-ink-soft);
+}
+.lead [data-tone~='hand'] {
+  font-family: var(--t-font-hand);
+  font-weight: 400;
+  letter-spacing: 0;
 }
 .body {
   max-width: 560px;
@@ -126,9 +131,9 @@
   text-align: right;
 }
 .stats dt {
-  font-family: var(--t-font-display);
+  font-family: var(--t-font-stats, var(--t-font-display));
   font-size: 6rem;
-  font-weight: 500;
+  font-weight: var(--t-stats-weight, 500);
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--t-ink);
