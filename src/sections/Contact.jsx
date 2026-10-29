@@ -6,7 +6,6 @@ import styles from './Contact.module.css'
 const SOCIAL = [
   { key: 'linkedin', label: 'LinkedIn ↗' },
   { key: 'behance', label: 'Behance ↗' },
-  { key: 'instagram', label: 'Instagram ↗' },
 ]
 
 /** Figma comment composer → opens the visitor's mail app with the
