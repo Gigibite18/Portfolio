@@ -144,7 +144,7 @@ export default function CaseOverlay({ slug }) {
         }}
       >
         <header className={styles.header}>
-          <img className={styles.avatar} src="/art/gigi-tag.jpg" alt="" width="40" height="40" />
+          <img className={styles.avatar} src="/art/gigi-photo.webp" alt="" width="40" height="40" />
           <div className={styles.titles}>
             <p id="case-title" className={styles.caseTitle}>
               {data.header.title}

@@ -56,7 +56,7 @@ export default function Hero() {
 
       <div className={styles.topbar}>
         <a href="#top" className={styles.logo} aria-label="Giovana Hossein Rebello — back to top">
-          <img src="/art/gigi-tag.jpg" alt="" width="64" height="64" />
+          <img src="/art/gigi-photo.webp" alt="" width="64" height="64" />
           <span>Giovana Hossein Rebello</span>
         </a>
         <Tag variant="status" className={styles.status}>
