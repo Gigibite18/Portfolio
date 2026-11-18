@@ -29,7 +29,7 @@
   height: 64px;
   border-radius: 36px;
   object-fit: cover;
-  object-position: 26% 0;
+  object-position: 43% 30%;
   transition: transform 300ms var(--ease-spring);
 }
 .logo:hover img {

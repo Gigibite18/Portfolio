@@ -54,13 +54,12 @@ export default function About() {
             </div>
             <div className={styles.portrait}>
               <Polaroid
-                src="/art/gigi-tag.jpg"
-                alt="Photo of gigi: dark red hair with bangs, smiling softly"
+                src="/art/gigi-photo.webp"
+                alt="Photo of gigi: wavy blonde hair, soft smile"
                 caption="meee"
                 frame="pink"
                 size="l"
                 rotate={-4}
-                crop={{ width: '193.24%', height: '100%', left: '-55.23%', top: 0 }}
               />
               <img
                 className={styles.avatar}
