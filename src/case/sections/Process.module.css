@@ -44,20 +44,34 @@
 .step[data-down] {
   margin-top: 200px;
 }
+/* centred variant (Fonfon): each step sits centred under its number,
+   numbers spaced 232px apart on the 1088px track like the Figma wave */
+.steps[data-align='center'] {
+  grid-template-columns: repeat(5, 21.32%);
+  width: 100%;
+  margin-left: -5.51%;
+  padding-left: 0;
+}
+.steps[data-align='center'] .step,
+.steps[data-align='center'] .pills {
+  align-items: center;
+  text-align: center;
+}
 .num {
   display: grid;
   place-items: center;
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--t-dark);
+  background: var(--t-num-bg, var(--t-dark));
+  box-shadow: var(--t-num-shadow, none);
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--t-on-dark);
   transition: transform 300ms var(--ease-spring);
 }
 .step[data-down] .num {
-  background: var(--t-accent);
+  background: var(--t-num-bg, var(--t-accent));
 }
 .step:hover .num {
   transform: scale(1.12) rotate(-8deg);
@@ -99,15 +113,20 @@
   .wave {
     display: none;
   }
-  .steps {
+  .steps,
+  .steps[data-align='center'] {
     grid-template-columns: minmax(0, 1fr);
+    margin-left: 0;
     gap: 28px;
     padding: 0 0 0 12px;
     border-left: 2px dotted color-mix(in srgb, var(--t-ink) 40%, transparent);
   }
   .step,
-  .step[data-down] {
+  .step[data-down],
+  .steps[data-align='center'] .step {
     display: grid;
+    align-items: start;
+    text-align: left;
     grid-template-columns: 52px 1fr;
     column-gap: 16px;
     margin-top: 0;

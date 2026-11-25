@@ -51,7 +51,7 @@ export default function KeyScreen({ data }) {
               <svg width="21" height="29" viewBox="0 0 21 29">
                 <path d="M.75 1.6V23.6L6.75 17.6L10.75 27.6L14.75 25.6L10.75 16.6H18.75L.75 1.6Z" />
               </svg>
-              <span>{c.label}</span>
+              {c.label && <span>{c.label}</span>}
             </span>
           )}
 

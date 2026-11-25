@@ -47,8 +47,10 @@
 }
 .pills li {
   padding: 8px 14px;
-  border: 1px solid var(--t-ink);
+  border: var(--t-pill-border, 1px solid var(--t-ink));
   border-radius: 99px;
+  background: var(--t-pill-bg, transparent);
+  box-shadow: var(--t-pill-shadow, none);
   font-family: var(--font-mono);
   font-size: var(--fs-mono-s);
   font-weight: 500;
@@ -70,7 +72,7 @@
   flex: none;
   padding: 6px 12px;
   border-radius: 99px;
-  background: var(--t-c2);
+  background: var(--t-role-tag, var(--t-c2));
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   letter-spacing: 0.06em;

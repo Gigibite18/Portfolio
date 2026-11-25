@@ -107,11 +107,12 @@
 }
 
 [data-case='fonfon'] {
-  --t-bg: #f2fafc;
+  /* Figma "case · theme" → mode Fonfon (ff/*, from the Fonfon DS) */
+  --t-bg: #fffcf8;
   --t-ink: #2b3138;
-  --t-ink-soft: #4a525b;
+  --t-ink-soft: #5f6872;
   --t-accent: #0c6b7f;
-  --t-dark: #2b3138;
+  --t-dark: #0c6b7f;
   --t-on-dark: #ffffff;
   --t-c1: #7fdcec;
   --t-c2: #ffc400;
@@ -119,16 +120,53 @@
   --t-c4: #f9aa9f;
   --t-c5: #cdaef2;
   --t-band-1: #dbeef4;
-  --t-band-2: #fff7d9;
+  --t-band-2: #f7f1e5;
   --t-band-3: #eef8dd;
   --t-paper: #ffffff;
-  --t-cover: #0c6b7f;
-  --t-line: #cdaef2;
-  --t-kraft: #dbeef4;
-  --t-shadow: rgb(43 49 56 / 0.12);
-  --t-shadow-deep: rgb(43 49 56 / 0.25);
-  --t-font-hand: var(--font-hand);
-  --t-font-display: var(--font-sans);
+  --t-cover: #dbeef4;
+  --t-line: #e8dcc2;
+  --t-kraft: #f7f1e5;
+  --t-shadow: rgb(0 0 0 / 0.12);
+  --t-shadow-deep: rgb(74 59 51 / 0.25);
+  /* Fonfon DS extras: 3D buttons = face + solid shadow underneath */
+  --ff-primary: #0e93b5; /* ff/primary · aqua/500 */
+  --ff-primary-shadow: #0c6b7f; /* ff/primary-shadow · aqua/700 */
+  --ff-sunny-shadow: #e08a00; /* ff/sunny-shadow */
+  --ff-neutral-200: #dde1e5; /* ff/neutral-200 */
+  /* feature bands 01/02: raw fills in Figma (not variables yet) */
+  --t-band-4: #fef9f0;
+  --t-band-5: #b5e8ff;
+  --t-doodle: #faebcb; /* cattail + lily-pad doodles */
+  /* the whole case is set in the app's own Fredoka */
+  --font-sans: 'Fredoka', system-ui, sans-serif;
+  --font-mono: 'Fredoka', system-ui, sans-serif;
+  --t-font-hand: 'Fredoka', sans-serif;
+  --t-font-display: 'Fredoka', sans-serif;
+  --t-font-eyebrow: 'Fredoka', sans-serif;
+  --t-counter: none;
+  /* DS card: white, 4px cream border (ff/line), soft shadow */
+  --t-card-border: 4px solid var(--t-line);
+  --t-comment-radius: 20px;
+  --t-band-radius: 40px;
+  --t-spark-on-dark: var(--t-c2);
+  --t-center-bg: transparent;
+  --t-center-img: 100%;
+  --t-pill-border: 0;
+  --t-pill-bg: var(--t-paper);
+  --t-pill-shadow: 0 6px 16px rgb(0 0 0 / 0.08);
+  --t-role-tag: var(--t-c1);
+  --t-gantt-size: 1.25rem;
+  --t-gantt-weight: 600;
+  --t-device-bg: var(--t-ink);
+  --t-pin-bg: var(--ff-primary);
+  --t-pin-shadow: 0 4px 0 var(--ff-primary-shadow);
+  --t-num-bg: var(--ff-primary);
+  --t-num-shadow: 0 6px 0 var(--ff-primary-shadow);
+  --t-back-shadow: 0 6px 0 var(--ff-neutral-200);
+  --t-next-bg: var(--t-c2);
+  --t-next-ink: var(--t-ink);
+  --t-next-shadow: 0 6px 0 var(--ff-sunny-shadow);
+  font-family: var(--font-sans);
 }
 
 [data-case='lumina'] {
@@ -154,4 +192,9 @@
   --t-shadow-deep: rgb(45 38 64 / 0.25);
   --t-font-hand: var(--font-hand);
   --t-font-display: var(--font-sans);
+}
+
+/* TwoTone ['text', 'bold'] — Fonfon titles mix Medium with Bold words */
+[data-case] [data-tone~='bold'] {
+  font-weight: 700;
 }

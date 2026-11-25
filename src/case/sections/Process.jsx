@@ -11,7 +11,7 @@ export default function Process({ data }) {
         <svg className={styles.wave} viewBox="0 0 930 202" preserveAspectRatio="none" aria-hidden="true">
           <path d="M1 1C117 1 117 201 233 201C349 201 349 1 465 1C581 1 581 201 697 201C813 201 813 1 929 1" />
         </svg>
-        <ol className={styles.steps}>
+        <ol className={styles.steps} data-align={data.align}>
           {data.steps.map((s, i) => (
             <li key={s.title} className={styles.step} data-down={i % 2 === 1 || undefined}>
               <span className={styles.num} aria-hidden="true">

@@ -6,7 +6,9 @@ const u = (px) => `${(px / 11.68).toFixed(3)}cqw`
 
 /** Cover: giant word + scribbles + meta row over a gradient glow. */
 export default function CaseHero({ data }) {
-  const { word, curl, rays, sticker, note, screen } = data
+  const { word, logo, curl, rays, sticker, note, screen, art } = data
+  // optional per-case device box (Figma px, rotation in CSS degrees)
+  const dev = data.device ?? { x: 312.5, y: 322 }
   return (
     <section className={styles.hero} aria-label="Cover">
       <div className={styles.band} data-band={data.band}>
@@ -24,13 +26,20 @@ export default function CaseHero({ data }) {
           ))}
         </dl>
 
-        <h1
-          className={styles.word}
-          data-font={word.font}
-          style={{ left: u(word.x), top: u(word.y), fontSize: u(word.size) }}
-        >
-          {word.text}
-        </h1>
+        {logo ? (
+          // the app's own wordmark stands in for the giant word
+          <h1 className={styles.logo} style={{ left: u(logo.x), top: u(logo.y), width: u(logo.w) }}>
+            <img src={logo.src} alt={word.text} />
+          </h1>
+        ) : (
+          <h1
+            className={styles.word}
+            data-font={word.font}
+            style={{ left: u(word.x), top: u(word.y), fontSize: u(word.size) }}
+          >
+            {word.text}
+          </h1>
+        )}
 
         {curl && (
           <svg
@@ -59,7 +68,16 @@ export default function CaseHero({ data }) {
           </svg>
         )}
 
-        <div className={styles.device} style={{ left: u(312.5), top: u(322), width: u(520), height: u(380) }}>
+        <div
+          className={styles.device}
+          style={{
+            left: u(dev.x),
+            top: u(dev.y),
+            width: u(520),
+            height: u(380),
+            '--dev-r': dev.r != null ? `${dev.r}deg` : undefined,
+          }}
+        >
           {screen.src ? (
             <img src={screen.src} alt={screen.alt} style={{ inset: u(16) }} data-fit={screen.fit} />
           ) : (
@@ -67,12 +85,31 @@ export default function CaseHero({ data }) {
           )}
         </div>
 
-        <span className={styles.sticker} style={{ left: u(sticker.x), top: u(sticker.y) }}>
-          {sticker.text}
-        </span>
+        {art && (
+          <img
+            className={styles.art}
+            src={art.src}
+            alt={art.alt}
+            style={{ left: u(art.x), top: u(art.y), width: u(art.w) }}
+          />
+        )}
+
+        {sticker && (
+          <span
+            className={styles.sticker}
+            style={{ left: u(sticker.x), top: u(sticker.y), '--r': sticker.r != null ? `${sticker.r}deg` : undefined }}
+          >
+            {sticker.text}
+          </span>
+        )}
         <p
           className={styles.note}
-          style={{ left: u(note.x), top: u(note.y), background: note.tone ? `var(--t-${note.tone})` : undefined }}
+          style={{
+            left: u(note.x),
+            top: u(note.y),
+            background: note.tone ? `var(--t-${note.tone})` : undefined,
+            '--r': note.r != null ? `${note.r}deg` : undefined,
+          }}
         >
           {note.lines.map((l, i) => (
             <span key={i}>{l}</span>

@@ -23,7 +23,7 @@ export default function Identity({ data }) {
     <Section id={data.id} className={styles.identity} labelledBy={`${data.id}-title`}>
       <SectionHeader eyebrow={data.eyebrow} n={data.n} title={data.title} titleId={`${data.id}-title`} />
       <div className={styles.typeRow}>
-        <div className={styles.specimen} style={{ '--spec-font': f.family }}>
+        <div className={styles.specimen} style={{ '--spec-font': f.family, '--spec-weight': f.weight }}>
           <div className={styles.specHead}>
             <p className={styles.specName}>{f.name}</p>
             <p className={styles.specSource}>{f.source}</p>
@@ -45,7 +45,7 @@ export default function Identity({ data }) {
           <p className={styles.specNote}>{f.note}</p>
         </div>
 
-        <div className={styles.aa} style={{ '--spec-font': f.family }} aria-hidden="true">
+        <div className={styles.aa} style={{ '--spec-font': f.family, '--spec-weight': f.weight }} aria-hidden="true">
           <span className={styles.aaGlyph}>
             Aa
             <span className={styles.aaSel}>

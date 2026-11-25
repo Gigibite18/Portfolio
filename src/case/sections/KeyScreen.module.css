@@ -134,18 +134,19 @@
   width: 32px;
   height: 32px;
   border-radius: 99px 99px 99px 4px;
-  background: var(--t-cover);
+  background: var(--t-pin-bg, var(--t-cover));
   font-size: var(--fs-label-s);
   font-weight: 700;
   color: var(--t-on-dark);
-  box-shadow: 0 4px 10px var(--t-shadow);
+  box-shadow: var(--t-pin-shadow, 0 4px 10px var(--t-shadow));
 }
 .comment {
   position: absolute;
   z-index: 1;
   width: 220px;
   padding: 14px 16px;
-  border-radius: 16px;
+  border: var(--t-card-border, 0);
+  border-radius: var(--t-comment-radius, 16px);
   background: var(--t-on-dark);
   box-shadow: 0 14px 30px var(--t-shadow);
   font-size: var(--fs-label-s);

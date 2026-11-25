@@ -100,13 +100,13 @@
   position: absolute;
   overflow: hidden;
   border-radius: 2.9cqw;
-  background: var(--t-dark);
+  background: var(--t-device-bg, var(--t-dark));
   box-shadow: 0 30px 60px var(--t-shadow-deep);
-  transform: rotate(5deg);
+  transform: rotate(var(--dev-r, 5deg));
   transition: transform 600ms var(--ease-spring);
 }
 .band:hover .device {
-  transform: rotate(2deg) translateY(-1cqw);
+  transform: rotate(calc(var(--dev-r, 5deg) - 3deg)) translateY(-1cqw);
 }
 .device img[data-fit='contain'] {
   object-fit: contain;
@@ -135,11 +135,11 @@
   white-space: nowrap;
   color: var(--t-on-dark);
   translate: -50% -50%;
-  rotate: -14deg;
+  rotate: var(--r, -14deg);
   transition: rotate 400ms var(--ease-spring);
 }
 .sticker:hover {
-  rotate: -4deg;
+  rotate: calc(var(--r, -14deg) + 10deg);
 }
 
 .note {
@@ -155,7 +155,34 @@
   white-space: nowrap;
   color: var(--t-ink);
   translate: -50% -50%;
-  rotate: -7deg;
+  rotate: var(--r, -7deg);
+}
+
+/* wordmark artwork (cases whose app has a logo) */
+.logo {
+  position: absolute;
+  margin: 0;
+  line-height: 0;
+  transition: scale 500ms var(--ease-spring);
+}
+.logo img {
+  width: 100%;
+  height: auto;
+}
+.band:hover .logo {
+  scale: 1.02;
+}
+
+/* mascot / character sitting next to the device */
+.art {
+  position: absolute;
+  height: auto;
+  filter: drop-shadow(0 18px 24px var(--t-shadow));
+  transform-origin: 50% 100%;
+  transition: rotate 600ms var(--ease-spring);
+}
+.band:hover .art {
+  rotate: -4deg;
 }
 
 .pills {
@@ -196,6 +223,23 @@
   .meta {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 10px;
+  }
+  /* logo variant: wordmark under the 2×2 meta grid, mascot beside the iPad */
+  .logo {
+    top: 34cqw !important;
+    left: 6cqw !important;
+    width: 88cqw !important;
+  }
+  .band:has(.logo) .device {
+    top: 72cqw !important;
+  }
+  .band:has(.logo) .note {
+    display: none;
+  }
+  .art {
+    left: 70cqw !important;
+    top: 92cqw !important;
+    width: 26cqw !important;
   }
   .word {
     top: 22cqw !important;
