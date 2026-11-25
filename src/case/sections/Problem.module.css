@@ -2,6 +2,7 @@
   padding: 16px;
 }
 .band {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +10,22 @@
   border-radius: 32px;
   background: var(--t-dark);
   color: var(--t-on-dark);
+}
+.art {
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  pointer-events: none;
+  rotate: var(--r);
+  transition: rotate 600ms var(--ease-spring);
+}
+.band:hover .art {
+  rotate: calc(var(--r) - 10deg);
+}
+@media (max-width: 1000px) {
+  .art {
+    display: none;
+  }
 }
 .band > :first-child {
   align-self: stretch;
@@ -67,6 +84,7 @@
   background: var(--t-c5);
 }
 .card[data-tone='on-dark'] {
+  border: var(--t-card-border, 0);
   background: var(--t-on-dark);
 }
 

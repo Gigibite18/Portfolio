@@ -103,7 +103,7 @@
   width: 32%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--t-dark);
+  background: var(--t-center-bg, var(--t-dark));
   translate: -50% -50%;
 }
 .centerSlot {
@@ -115,8 +115,8 @@
   color: var(--t-ink-soft);
 }
 .center img {
-  width: 84%;
-  height: 84%;
+  width: var(--t-center-img, 84%);
+  height: var(--t-center-img, 84%);
   border-radius: 50%;
   object-fit: cover;
   transition: transform 500ms var(--ease-spring);

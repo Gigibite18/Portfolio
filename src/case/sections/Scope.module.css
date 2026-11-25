@@ -1,5 +1,22 @@
 .scope {
+  position: relative;
   padding: 24px 56px 48px;
+}
+.art {
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  pointer-events: none;
+  transform-origin: 30% 90%;
+  transition: rotate 600ms var(--ease-spring);
+}
+.scope:hover .art {
+  rotate: -5deg;
+}
+@media (max-width: 760px) {
+  .art {
+    display: none;
+  }
 }
 .gantt {
   position: relative;

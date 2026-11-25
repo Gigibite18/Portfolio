@@ -32,6 +32,21 @@ export default function Problem({ data }) {
           ))}
         </ul>
         {data.footnote && <p className={styles.footnote}>{data.footnote}</p>}
+        {data.art && (
+          // Figma px on the 1168px band → %
+          <img
+            className={styles.art}
+            src={data.art.src}
+            alt={data.art.alt}
+            style={{
+              left: `${(data.art.x / 1168) * 100}%`,
+              top: data.art.y,
+              width: data.art.w,
+              '--r': `${data.art.r ?? 0}deg`,
+            }}
+            loading="lazy"
+          />
+        )}
       </div>
     </Section>
   )

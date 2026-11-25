@@ -61,11 +61,13 @@
 }
 .back {
   background: var(--t-on-dark);
+  box-shadow: var(--t-back-shadow, none);
   color: var(--t-ink);
 }
 .next {
-  background: var(--t-accent-btn, var(--t-accent));
-  color: var(--t-on-dark);
+  background: var(--t-next-bg, var(--t-accent-btn, var(--t-accent)));
+  box-shadow: var(--t-next-shadow, none);
+  color: var(--t-next-ink, var(--t-on-dark));
 }
 /* Still me: the band sits on the warm t/cover yellow */
 .band[data-light] {
@@ -135,7 +137,7 @@
 .credits {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
   margin: 0 56px 40px;
   padding-top: 26px;

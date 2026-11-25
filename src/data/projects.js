@@ -3,7 +3,7 @@
 export const CASE_ORDER = ['still-me', 'dear-diary', 'lumina', 'fonfon', 'orbia']
 
 // Only these cases are finished in Figma; the rest open a "not available yet" note.
-export const AVAILABLE = ['still-me', 'dear-diary']
+export const AVAILABLE = ['still-me', 'dear-diary', 'fonfon']
 
 export const FEATURED = {
   slug: 'still-me',
@@ -46,7 +46,8 @@ export const GRID = [
   {
     slug: 'fonfon',
     title: 'Fonfon • Phonics that feel like play',
-    summary: 'An iPad app that helps kids learn phonemes, designed with Antônio, iOS dev.',
+    summary:
+      'An iPad game where kids aged 4 to 8 practise speech sounds with their voice. Made by a team of 5, with 20+ speech therapists.',
     tags: ['iPad app', 'Kids', '2026'],
     cover: {
       src: '/images/covers/fonfon.webp',

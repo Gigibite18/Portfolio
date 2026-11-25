@@ -35,6 +35,9 @@
   fill: var(--t-accent);
   transition: transform 600ms var(--ease-spring);
 }
+.header[data-on-dark] .spark {
+  fill: var(--t-spark-on-dark, var(--t-accent));
+}
 .header:hover .spark {
   transform: rotate(90deg) scale(1.2);
 }
